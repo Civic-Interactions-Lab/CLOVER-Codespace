@@ -1,0 +1,10 @@
+{
+    "image":"mcr.microsoft.com/devcontainers/universal:2",
+    "customizations": {
+     "vscode": {
+        "extensions": [
+            "capstone-team-2.temple-capstone-clover"
+        ]
+     }   
+    }
+}
