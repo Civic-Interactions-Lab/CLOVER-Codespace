@@ -1,10 +1,14 @@
 {
-    "image":"mcr.microsoft.com/devcontainers/universal:2",
-    "customizations": {
-     "vscode": {
-        "extensions": [
-            "capstone-team-2.tu-clover"
-        ]
-     }   
+  "name": "py-slim + tu-clover",
+  "image": "python:3.13-slim-bookworm",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "capstone-team-2.tu-clover"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
     }
+  }
 }
