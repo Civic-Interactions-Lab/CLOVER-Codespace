@@ -1,0 +1,20 @@
+{
+  // Keep the UI sparse
+  "workbench.editor.showTabs": true,          // students can switch files easily
+  "workbench.panel.defaultLocation": "right", // panels out of the way
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.enablePersistentSessions": false,
+  "git.enabled": false,                       // hide Git for the study
+  "problems.showCurrentInStatus": false,
+
+  // Editor comfort
+  "editor.fontSize": 14,
+  "editor.suggest.showWords": true,
+  "editor.quickSuggestions": false,
+  "editor.parameterHints.enabled": false,
+  "editor.hover.enabled": false,
+  "editor.codeActionsOnSave": {},
+
+  // Python: ensure Run button always visible & simple
+  "debug.python.debugJustMyCode": true
+}
