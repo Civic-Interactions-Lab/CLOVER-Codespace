@@ -21,7 +21,7 @@
         "extensions.ignoreRecommendations": true,
 
         // Hide distractions
-        "workbench.statusBar.visible": false,
+        "workbench.statusBar.visible": true,
         "workbench.activityBar.location": "top",  // keeps it small & simple
         "breadcrumbs.enabled": false,
         "editor.minimap.enabled": false,
