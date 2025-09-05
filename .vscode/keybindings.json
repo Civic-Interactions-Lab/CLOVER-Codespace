@@ -1,0 +1,14 @@
+[
+  // Make F5 behave like "Run Without Debugging" for Python files
+  {
+    "key": "f5",
+    "command": "python.execInTerminal", 
+    "when": "resourceLangId == python"
+  },
+  // A second obvious key: Ctrl+Enter runs current Python file
+  {
+    "key": "ctrl+enter",
+    "command": "python.execInTerminal",
+    "when": "resourceLangId == python && editorTextFocus"
+  }
+]
