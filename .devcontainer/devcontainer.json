@@ -38,7 +38,7 @@
         "python.testing.pytestEnabled": false,
         "python.languageServer": "Default",
         "jupyter.logging.level": "error",
-
+        "task.allowAutomaticTasks": "on"
         // Keep sidebar focused on Explorer by default
         "workbench.view.alwaysShowHeaderActions": false
       }
@@ -50,5 +50,7 @@
   "postCreateCommand": "echo Ready",
 
   // Codespaces perf knobs
-  "hostRequirements": { "cpus": 2, "memory": "4gb" }
+  "hostRequirements": { "cpus": 2, "memory": "4gb" },
+  "postAttachCommand": "bash -lc 'for i in {1..5}; do code --execute-command clover.signIn && break || sleep 1; done'"
+
 }
