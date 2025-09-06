@@ -97,7 +97,7 @@
   "features": {},
 
   // Speed: don't pull heavy tooling + Remove all AI assistants + Hide UI with delayed script
-  "postCreateCommand": "echo Ready && code --uninstall-extension GitHub.copilot --uninstall-extension GitHub.copilot-chat --uninstall-extension GitHub.copilot-labs --uninstall-extension TabNine.tabnine-vscode --uninstall-extension Codeium.codeium --uninstall-extension VisualStudioExptTeam.vscodeintellicode && code --disable-extension GitHub.copilot --disable-extension GitHub.copilot-chat --disable-extension GitHub.copilot-labs && chmod +x .devcontainer/hide-copilot.sh && nohup .devcontainer/hide-copilot.sh > /dev/null 2>&1 & || true",
+  "postCreateCommand": "bash -c 'echo Ready && (code --uninstall-extension GitHub.copilot --uninstall-extension GitHub.copilot-chat --uninstall-extension GitHub.copilot-labs --uninstall-extension TabNine.tabnine-vscode --uninstall-extension Codeium.codeium --uninstall-extension VisualStudioExptTeam.vscodeintellicode || true) && (code --disable-extension GitHub.copilot --disable-extension GitHub.copilot-chat --disable-extension GitHub.copilot-labs || true) && chmod +x .devcontainer/hide-copilot.sh && (nohup .devcontainer/hide-copilot.sh > /dev/null 2>&1 & || true)'",
 
   // Codespaces perf knobs
   "hostRequirements": { "cpus": 2, "memory": "4gb" }
