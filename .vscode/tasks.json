@@ -3,11 +3,15 @@
   "tasks": [
     {
       "label": "Hide Copilot Setup on Startup",
-      "command": "echo 'Attempting to hide Copilot setup...'",
       "runOptions": {
         "runOn": "folderOpen"
       },
-      "dependsOn": ["executeHideSetupCommand"]
+      "dependsOn": ["executeHideSetupCommand"],
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared"
+      },
+      "problemMatcher": []
     },
     {
       "label": "executeHideSetupCommand",
@@ -16,6 +20,3 @@
     }
   ]
 }
-
-
-
