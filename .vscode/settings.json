@@ -1,6 +1,6 @@
 {
   // Keep the UI sparse
-  "workbench.editor.showTabs": true,          // students can switch files easily
+  "workbench.editor.showTabs": "multiple",          // students can switch files easily
   "workbench.panel.defaultLocation": "right", // panels out of the way
   "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.enablePersistentSessions": false,
@@ -10,7 +10,11 @@
   // Editor comfort
   "editor.fontSize": 14,
   "editor.suggest.showWords": true,
-  "editor.quickSuggestions": false,
+  "editor.quickSuggestions": {
+    "comments": "off",
+    "strings": "off",
+    "other": "off"
+  },
   "editor.parameterHints.enabled": false,
   "editor.hover.enabled": false,
   "editor.codeActionsOnSave": {},
@@ -49,13 +53,17 @@
 
   // Hide all extension notifications and setup prompts
   "workbench.statusBar.feedback.visible": false,
-  "extensions.showRecommendationsOnlyOnDemand": true,
+   "extensions.showRecommendationsOnlyOnDemand": true,
   "workbench.welcomePage.walkthroughs.openOnInstall": false,
   "notifications.showExtensionsRecommendations": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
 
   // Hide status bar items that might show Copilot
   "workbench.statusBar.visible": true,
-  "workbench.activityBar.visible": true,
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+
+  // Hide chat/copilot setup completely
+  "chat.setupHidden": true,
+  "workbench.welcomePage.experimental.extensionContributions": false,
+  "workbench.activityBar.iconClickBehavior": "focus"
 }
