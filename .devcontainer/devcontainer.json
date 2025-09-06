@@ -54,6 +54,30 @@
         "editor.inlineSuggest.enabled": false,
         "editor.suggest.showInlineCompletions": false,
 
+        // Hide all Copilot UI elements completely
+        "github.copilot.editor.enableAutoCompletions": false,
+        "github.copilot.editor.enableCodeActions": false,
+        "github.copilot.advanced": {
+          "authProvider": "",
+          "debug.showScores": false,
+          "debug.overrideEngine": "",
+          "debug.overrideProxyUrl": "",
+          "debug.testOverrideProxyUrl": "",
+          "debug.filterLogCategories": []
+        },
+        "github.copilot.chat.welcomeMessage": "never",
+        "github.copilot.chat.localeOverride": "",
+        "github.copilot.renameSuggestions.triggerAutomatically": false,
+
+        // Hide status bar items and notifications
+        "github.copilot.statusBarItem": false,
+        "workbench.statusBar.feedback.visible": false,
+        "extensions.autoCheckUpdates": false,
+        "extensions.autoUpdate": false,
+        "extensions.showRecommendationsOnlyOnDemand": true,
+        "workbench.welcomePage.walkthroughs.openOnInstall": false,
+        "workbench.startupEditor": "none",
+
         // Block other potential AI assistants
         "tabnine.disable_auto_update": true,
         "tabnine.binary_notification": false,
@@ -72,8 +96,8 @@
   },
   "features": {},
 
-  // Speed: don't pull heavy tooling + Remove all AI assistants
-  "postCreateCommand": "echo Ready && code --uninstall-extension GitHub.copilot --uninstall-extension GitHub.copilot-chat --uninstall-extension GitHub.copilot-labs --uninstall-extension TabNine.tabnine-vscode --uninstall-extension Codeium.codeium --uninstall-extension VisualStudioExptTeam.vscodeintellicode || true",
+  // Speed: don't pull heavy tooling + Remove all AI assistants + Hide UI
+  "postCreateCommand": "echo Ready && code --uninstall-extension GitHub.copilot --uninstall-extension GitHub.copilot-chat --uninstall-extension GitHub.copilot-labs --uninstall-extension TabNine.tabnine-vscode --uninstall-extension Codeium.codeium --uninstall-extension VisualStudioExptTeam.vscodeintellicode && code --disable-extension GitHub.copilot --disable-extension GitHub.copilot-chat --disable-extension GitHub.copilot-labs || true",
 
   // Codespaces perf knobs
   "hostRequirements": { "cpus": 2, "memory": "4gb" }

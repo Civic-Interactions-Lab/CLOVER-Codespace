@@ -18,7 +18,7 @@
   // Python: ensure Run button always visible & simple
   "debug.python.debugJustMyCode": true,
 
-  // Additional GitHub Copilot blocking settings
+  // Comprehensive GitHub Copilot blocking and UI hiding
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
@@ -38,5 +38,24 @@
   "editor.tabCompletion": "off",
   "editor.wordBasedSuggestions": "off",
   "editor.suggest.snippetsPreventQuickSuggestions": false,
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+
+  // Additional Copilot UI hiding settings
+  "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.editor.enableCodeActions": false,
+  "github.copilot.chat.welcomeMessage": "never",
+  "github.copilot.renameSuggestions.triggerAutomatically": false,
+  "github.copilot.statusBarItem": false,
+
+  // Hide all extension notifications and setup prompts
+  "workbench.statusBar.feedback.visible": false,
+  "extensions.showRecommendationsOnlyOnDemand": true,
+  "workbench.welcomePage.walkthroughs.openOnInstall": false,
+  "notifications.showExtensionsRecommendations": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+
+  // Hide status bar items that might show Copilot
+  "workbench.statusBar.visible": true,
+  "workbench.activityBar.visible": true,
+  "workbench.editor.enablePreview": false
 }
