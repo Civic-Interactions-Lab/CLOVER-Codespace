@@ -65,5 +65,38 @@
   // Hide chat/copilot setup completely
   "chat.setupHidden": true,
   "workbench.welcomePage.experimental.extensionContributions": false,
-  "workbench.activityBar.iconClickBehavior": "focus"
+  "workbench.activityBar.iconClickBehavior": "focus",
+
+  // Git/GitHub UI minimization
+  "git.autofetch": false,
+  "git.decorations.enabled": false,
+  "git.countBadge": "off",
+  "explorer.decorations.colors": false,
+  "explorer.decorations.badges": false,
+
+  // Testing UI minimization
+  "testing.defaultGutterEnabled": false,
+  "testing.automaticallyOpenPeekView": "never",
+  "testing.openTesting": "never",
+
+  // Hide remaining Git/SCM surfaces
+  "scm.diffDecorations": "none",
+  "scm.countBadge": "off",
+  "git.showStatusBarSyncIcon": false,
+  "timeline.excludeSources": [
+    "git"
+  ],
+  "workbench.activityBar.location": "hidden",
+  "testing.automaticallyOpenTestResults": "never",
+
+  // Hide dotfiles from Explorer, Search, and file watchers
+  "files.exclude": {
+    "**/.*": true
+  },
+  "search.exclude": {
+    "**/.*": true
+  },
+  "files.watcherExclude": {
+    "**/.*": true
+  }
 }
