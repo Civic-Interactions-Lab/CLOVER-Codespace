@@ -16,5 +16,27 @@
   "editor.codeActionsOnSave": {},
 
   // Python: ensure Run button always visible & simple
-  "debug.python.debugJustMyCode": true
+  "debug.python.debugJustMyCode": true,
+
+  // Additional GitHub Copilot blocking settings
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "python": false,
+    "json": false,
+    "jsonc": false
+  },
+  "github.copilot.inlineSuggest.enable": false,
+  "github.copilot.chat.enable": false,
+  "github.copilot.advanced": {},
+  "editor.inlineSuggest.enabled": false,
+  "editor.suggest.showInlineCompletions": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.tabCompletion": "off",
+  "editor.wordBasedSuggestions": "off",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "extensions.ignoreRecommendations": true
 }

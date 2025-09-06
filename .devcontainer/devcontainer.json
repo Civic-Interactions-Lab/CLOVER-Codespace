@@ -39,16 +39,42 @@
         "python.languageServer": "Default",
         "jupyter.logging.level": "error",
         // Keep sidebar focused on Explorer by default
-        "workbench.view.alwaysShowHeaderActions": false
+        "workbench.view.alwaysShowHeaderActions": false,
+
+        // Comprehensive AI assistant blocking
+        "github.copilot.enable": {
+          "*": false,
+          "plaintext": false,
+          "markdown": false,
+          "scminput": false,
+          "python": false
+        },
+        "github.copilot.inlineSuggest.enable": false,
+        "github.copilot.chat.enable": false,
+        "editor.inlineSuggest.enabled": false,
+        "editor.suggest.showInlineCompletions": false,
+
+        // Block other potential AI assistants
+        "tabnine.disable_auto_update": true,
+        "tabnine.binary_notification": false,
+        "codeium.enableCodeLens": false,
+        "codeium.enableConfig": false,
+        "vsintellicode.modify.editor.suggestSelection": "off",
+
+        // Additional suggestion blocking
+        "editor.quickSuggestions": {
+          "other": false,
+          "comments": false,
+          "strings": false
+        }
       }
     }
   },
   "features": {},
 
-  // Speed: don't pull heavy tooling
-  "postCreateCommand": "echo Ready",
+  // Speed: don't pull heavy tooling + Remove all AI assistants
+  "postCreateCommand": "echo Ready && code --uninstall-extension GitHub.copilot --uninstall-extension GitHub.copilot-chat --uninstall-extension GitHub.copilot-labs --uninstall-extension TabNine.tabnine-vscode --uninstall-extension Codeium.codeium --uninstall-extension VisualStudioExptTeam.vscodeintellicode || true",
 
   // Codespaces perf knobs
-  "hostRequirements": { "cpus": 2, "memory": "4gb" },
-
+  "hostRequirements": { "cpus": 2, "memory": "4gb" }
 }
