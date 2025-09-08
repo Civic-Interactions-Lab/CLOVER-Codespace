@@ -8,8 +8,7 @@
         "ms-python.python",
         "ms-python.debugpy",
         "ms-python.vscode-pylance",
-        "capstone-team-2.tu-clover",
-        // Prevent GitHub Copilot and other AI extensions from being installed
+        "capstone-team-2.tu-clover@prerelease",        // Prevent GitHub Copilot and other AI extensions from being installed
         "-GitHub.copilot",
         "-GitHub.copilot-chat",
         "-GitHub.copilot-labs",
