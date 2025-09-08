@@ -32,38 +32,14 @@
     "json": false,
     "jsonc": false
   },
-  "github.copilot.inlineSuggest.enable": false,
-  "github.copilot.chat.enable": false,
-  "github.copilot.advanced": {},
-  "editor.inlineSuggest.enabled": false,
-  "editor.suggest.showInlineCompletions": false,
-  "editor.acceptSuggestionOnCommitCharacter": false,
-  "editor.acceptSuggestionOnEnter": "off",
-  "editor.tabCompletion": "off",
-  "editor.wordBasedSuggestions": "off",
-  "editor.suggest.snippetsPreventQuickSuggestions": false,
-  "extensions.ignoreRecommendations": true,
 
-  // Additional Copilot UI hiding settings
-  "github.copilot.editor.enableAutoCompletions": false,
-  "github.copilot.editor.enableCodeActions": false,
-  "github.copilot.chat.welcomeMessage": "never",
-  "github.copilot.renameSuggestions.triggerAutomatically": false,
-  "github.copilot.statusBarItem": false,
 
-  // Hide all extension notifications and setup prompts
-  "workbench.statusBar.feedback.visible": false,
-   "extensions.showRecommendationsOnlyOnDemand": true,
-  "workbench.welcomePage.walkthroughs.openOnInstall": false,
-  "notifications.showExtensionsRecommendations": false,
-  "workbench.settings.enableNaturalLanguageSearch": false,
 
   // Hide status bar items that might show Copilot
   "workbench.statusBar.visible": true,
   "workbench.editor.enablePreview": false,
 
   // Hide chat/copilot setup completely
-  "chat.setupHidden": true,
   "workbench.welcomePage.experimental.extensionContributions": false,
   "workbench.activityBar.iconClickBehavior": "focus",
 
@@ -87,7 +63,6 @@
     "git"
   ],
   "workbench.activityBar.location": "hidden",
-  "testing.automaticallyOpenTestResults": "never",
 
   // Hide dotfiles from Explorer, Search, and file watchers
   "files.exclude": {
@@ -99,4 +74,3 @@
   "files.watcherExclude": {
     "**/.*": true
   }
-}

@@ -69,10 +69,6 @@
         "chat.setupHidden": true,
         "workbench.statusBar.feedback.visible": false,
 
-        // 3. Disable generic editor AI/suggestion features
-        "editor.inlineSuggest.enabled": false,
-        "editor.suggest.showInlineCompletions": false,
-        "editor.quickSuggestions": { "other": false, "comments": false, "strings": false },
 
         // 4. Block other common AI assistants
         "tabnine.disable_auto_update": true,
