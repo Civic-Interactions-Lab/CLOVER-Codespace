@@ -1,12 +1,14 @@
 {
   // Keep the UI sparse
-  "workbench.editor.showTabs": "multiple",          // students can switch files easily
-  "workbench.panel.defaultLocation": "right", // panels out of the way
+  "workbench.editor.showTabs": "multiple",
+  // students can switch files easily
+  "workbench.panel.defaultLocation": "right",
+  // panels out of the way
   "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.enablePersistentSessions": false,
-  "git.enabled": false,                       // hide Git for the study
+  "git.enabled": false,
+  // hide Git for the study
   "problems.showCurrentInStatus": false,
-
   // Editor comfort
   "editor.fontSize": 14,
   "editor.suggest.showWords": true,
@@ -18,10 +20,8 @@
   "editor.parameterHints.enabled": false,
   "editor.hover.enabled": false,
   "editor.codeActionsOnSave": {},
-
   // Python: ensure Run button always visible & simple
   "debug.python.debugJustMyCode": true,
-
   // Comprehensive GitHub Copilot blocking and UI hiding
   "github.copilot.enable": {
     "*": false,
@@ -32,29 +32,22 @@
     "json": false,
     "jsonc": false
   },
-
-
-
   // Hide status bar items that might show Copilot
   "workbench.statusBar.visible": true,
   "workbench.editor.enablePreview": false,
-
   // Hide chat/copilot setup completely
   "workbench.welcomePage.experimental.extensionContributions": false,
   "workbench.activityBar.iconClickBehavior": "focus",
-
   // Git/GitHub UI minimization
   "git.autofetch": false,
   "git.decorations.enabled": false,
   "git.countBadge": "off",
   "explorer.decorations.colors": false,
   "explorer.decorations.badges": false,
-
   // Testing UI minimization
   "testing.defaultGutterEnabled": false,
   "testing.automaticallyOpenPeekView": "never",
   "testing.openTesting": "never",
-
   // Hide remaining Git/SCM surfaces
   "scm.diffDecorations": "none",
   "scm.countBadge": "off",
@@ -63,7 +56,6 @@
     "git"
   ],
   "workbench.activityBar.location": "hidden",
-
   // Hide dotfiles from Explorer, Search, and file watchers
   "files.exclude": {
     "**/.*": true
@@ -74,3 +66,4 @@
   "files.watcherExclude": {
     "**/.*": true
   }
+}
