@@ -21,7 +21,7 @@
   "editor.hover.enabled": false,
   "editor.codeActionsOnSave": {},
   // Python: ensure Run button always visible & simple
-  "debug.python.debugJustMyCode": true,
+//  "debug.python.debugJustMyCode": true,
   // Comprehensive GitHub Copilot blocking and UI hiding
   "github.copilot.enable": {
     "*": false,
@@ -66,5 +66,6 @@
   "files.watcherExclude": {
     "**/.*": true
   },
-  "clover.debug.apiUrl": "Dev API"
+  "clover.debug.apiUrl": "Dev API",
+  "testing.automaticallyOpenTestResults": "never"
 }

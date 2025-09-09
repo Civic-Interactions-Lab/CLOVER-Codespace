@@ -3,11 +3,11 @@
   "configurations": [
     {
       "name": "Run Current Python File",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${file}",
       "console": "integratedTerminal",
-      "justMyCode": true
+      "preLaunchTask": "monitorRun"
     }
   ]
 }
