@@ -65,5 +65,6 @@
   },
   "files.watcherExclude": {
     "**/.*": true
-  }
+  },
+  "clover.debug.apiUrl": "Dev API"
 }
