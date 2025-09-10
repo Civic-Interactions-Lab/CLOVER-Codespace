@@ -11,6 +11,7 @@
   "problems.showCurrentInStatus": false,
   // Editor comfort
   "editor.fontSize": 14,
+  "editor.tabSize":2,
   "editor.suggest.showWords": true,
   "editor.quickSuggestions": {
     "comments": "off",
@@ -20,8 +21,8 @@
   "editor.parameterHints.enabled": false,
   "editor.hover.enabled": false,
   "editor.codeActionsOnSave": {},
-  // Python: ensure Run button always visible & simple
-//  "debug.python.debugJustMyCode": true,
+  // Python: Don't show stock run button.
+ "debug.python.debugJustMyCode": false,
   // Comprehensive GitHub Copilot blocking and UI hiding
   "github.copilot.enable": {
     "*": false,
