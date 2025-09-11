@@ -79,7 +79,5 @@
     }
   },
   // Remove lifecycle scripts as they are no longer needed
-  "postCreateCommand": null,
-  "postAttachCommand": null,
   "hostRequirements": { "cpus": 2, "memory": "4gb" }
 }
