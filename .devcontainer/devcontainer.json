@@ -8,7 +8,7 @@
         "ms-python.python",
         "ms-python.debugpy",
         "ms-python.vscode-pylance",
-        "./tu-clover-0.6.1.vsix",        // Prevent GitHub Copilot and other AI extensions from being installed
+        "${containerWorkspaceFolder}/.devcontainer/tu-clover-0.6.1.vsix",        // Prevent GitHub Copilot and other AI extensions from being installed
         "-GitHub.copilot",
         "-GitHub.copilot-chat",
         "-GitHub.copilot-labs",
@@ -78,6 +78,5 @@
       }
     }
   },
-  // Remove lifecycle scripts as they are no longer needed
   "hostRequirements": { "cpus": 2, "memory": "4gb" }
 }
