@@ -67,10 +67,10 @@
   "files.watcherExclude": {
     "**/.*": true
   },
-  "clover.debug.apiUrl": "Dev API",
-  "clover.classId": "b64d5af8-96ad-4eab-8031-0bf119445706",
-  "clover.classCode": "WEB201",
-  "clover.classTitle": "Full-Stack Web Development",
-  "clover.classHexColor": "#4DD0E1",
+  "clover.debug.apiUrl": "Main API",
+  "clover.classId": "cced7417-76db-457f-b9d1-bae30bd57dcf",
+  "clover.classCode": "4398",
+  "clover.classTitle": "Capstone",
+  "clover.classHexColor": "#FFDE57"
   "testing.automaticallyOpenTestResults": "never"
 }
