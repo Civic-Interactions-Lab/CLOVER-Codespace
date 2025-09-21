@@ -8,6 +8,23 @@
         "reveal": "always"
       },
       "command": "${command:clover.alertRan}"
+    },
+    {
+      "label": "Hide Copilot Setup on Startup",
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "dependsOn": ["executeHideSetupCommand"],
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "executeHideSetupCommand",
+      "command": "${command:workbench.action.chat.hideSetup}",
+      "problemMatcher": []
     }
   ]
 }
