@@ -33,6 +33,7 @@
     "json": false,
     "jsonc": false
   },
+  "chat.disableAIFeatures": true,
   // Hide status bar items that might show Copilot
   "workbench.statusBar.visible": true,
   "workbench.editor.enablePreview": false,
@@ -71,6 +72,6 @@
   "clover.classId": "cced7417-76db-457f-b9d1-bae30bd57dcf",
   "clover.classCode": "4398",
   "clover.classTitle": "Capstone",
-  "clover.classHexColor": "#FFDE57"
+  "clover.classHexColor": "#FFDE57",
   "testing.automaticallyOpenTestResults": "never"
 }
