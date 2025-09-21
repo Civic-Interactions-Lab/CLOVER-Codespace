@@ -33,6 +33,7 @@
     "json": false,
     "jsonc": false
   },
+  "chat.disableAIFeatures": true,
   // Hide status bar items that might show Copilot
   "workbench.statusBar.visible": true,
   "workbench.editor.enablePreview": false,
