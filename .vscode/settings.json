@@ -69,9 +69,11 @@
     "**/.*": true
   },
   "clover.debug.apiUrl": "Main API",
-  "clover.classId": "cced7417-76db-457f-b9d1-bae30bd57dcf",
-  "clover.classCode": "4398",
-  "clover.classTitle": "Capstone",
-  "clover.classHexColor": "#FFDE57",
+ "clover.classId": "d10b965e-909c-4620-9c3f-6e4cb0045382",
+  "clover.classCode": "1051",
+  "clover.classTitle": "Introduction to Problem Solving & Programming in Python",
+  "clover.preSurveyId": "c6829361-0e00-455d-93de-8c07a82b6dac",
+  "clover.postSurveyId": "04df83d4-9598-43ed-8032-bc6efa30315c",
+  "clover.classHexColor": "#FDE047",
   "testing.automaticallyOpenTestResults": "never"
 }
