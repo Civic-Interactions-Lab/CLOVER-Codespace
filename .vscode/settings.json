@@ -68,12 +68,6 @@
   "files.watcherExclude": {
     "**/.*": true
   },
-  "clover.debug.apiUrl": "Main API",
- "clover.classId": "d10b965e-909c-4620-9c3f-6e4cb0045382",
-  "clover.classCode": "1051",
-  "clover.classTitle": "Introduction to Problem Solving & Programming in Python",
-  "clover.preSurveyId": "c6829361-0e00-455d-93de-8c07a82b6dac",
-  "clover.postSurveyId": "a7246307-dffb-405c-a2d3-421b36dbfae3",
-  "clover.classHexColor": "#FDE047",
+  "clover.debug.apiUrl": "Dev API",
   "testing.automaticallyOpenTestResults": "never"
 }
