@@ -24,6 +24,8 @@
   // Java Settings
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.autobuild.enabled": true,
+  // Hide default Java Run/Debug buttons (only show CLOVER's run button)
+  "java.debug.settings.enableRunDebugCodeLens": false,
   // Comprehensive GitHub Copilot blocking and UI hiding
   "github.copilot.enable": {
     "*": false,

@@ -45,6 +45,8 @@
         "java.autobuild.enabled": true,
         "java.codeGeneration.useBlocks": true,
         "java.compile.nullAnalysis.mode": "automatic",
+        // Hide default Java Run/Debug buttons (only show CLOVER's run button)
+        "java.debug.settings.enableRunDebugCodeLens": false,
 
         // --- Comprehensive AI/Copilot Blocking ---
         // This is a multi-layered defense to prevent any AI features from running or being visible.
