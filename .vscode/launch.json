@@ -1,12 +1,4 @@
 {
   "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Run Main",
-      "type": "java",
-      "request": "launch",
-      "mainClass": "Main",
-      "preLaunchTask": "monitorRun"
-    }
-  ]
+  "configurations": []
 }
