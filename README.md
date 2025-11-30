@@ -1,103 +1,70 @@
-# Blame Pope Gregory XIII
+# The Rainfall Problem
 
-**Author:** Andrew Rosen
+**Author:** Elliot Soloway
 
 ## Abstract
 
-This lab is an exercise that goes over `if/else` statements or `switch` statements, modular arithmetic, String methods, and converting Strings to integers.  
-It is adapted from Savitch's Java book.
+The rainfall problem is a programming exercise where users input daily rainfall amounts until a sentinel value (e.g., -999) is entered, after which the program calculates and reports the total and average rainfall.
 
 ---
 
 ## 1. Assignment
 
-Write a program that, given a string as an input, tests if the given string is a valid date in the Gregorian Calendar. Your program should output whether the given date is valid. If the given date is not valid, report why.
+Write a program that processes an input consisting of daily rainfall measurements (non-negative integers) until it encounters the integer -999. The program should output the total and average of the numbers.
 
-- Dates in the US are formatted **MM/DD/YYYY**.
-- Valid months are in the range `[1, 12]`.
-- September, April, June, and November each have 30 days.
-- All other months but February have 31 days.
-- February has 28 days, except on a leap year, where it has 29.
+**Example:**
 
-**Leap year rules:**
-
-- A year not divisible by 4 is a normal year.
-- A year divisible by 4 is a leap year except...
-- A year divisible by 100 is not a leap year except...
-- A year divisible by 400 is a leap year.
-
-**Examples:**
-
-- 1644 -> leap year
-- 1645 -> not a leap year
-- 1600 -> leap year
-- 1700 -> not a leap year
-
-You will need to think of a way to arrange the logic of these statements. Think about different ways to categorize leap years and non-leap years.
-
-> **Note:** The Gregorian Calendar is the most widely used civil calendar, instituted by Pope Gregory XIII (1572-1585). Some countries resisted using it until well into the 1900s.
+```
+Enter daily rainfall amounts (enter -999 to stop):
+10
+20
+0
+15
+-999
+Total rainfall = 45.0
+Average rainfall = 11.25
+```
 
 ---
 
 ## 2. Hints
 
-To complete this assignment, you will need to utilize some methods not used in class. Start by reading in the user's input using `Scanner`.
+To complete this assignment, you will need to utilize some methods not used in class.
 
-### 2.1 Getting a Substring
+### 2.1 Reading User Input
 
-To get a small portion of the string, use the `substring()` method:
-
-```java
-String s = "My name";
-
-String s2 = s.substring(0, 2);  // "My"
-String s3 = s.substring(3, 6);  // "nam"
-String s4 = s.substring(3);     // "name"
-char c = s.charAt(3);           // 'n'
-String space = s.substring(2, 3);  // " "
-```
-
-`substring(start, end)` returns a substring from start to, but not including, end.
-Indices in Java start at 0.
-
-### 2.2 Converting Strings to Integers
-
-Use `Integer.parseInt()` to convert a string into an integer:
+Use `Scanner` to read input from the user:
 
 ```java
-String s = "123";
-int i = Integer.parseInt(s);  // 123
+Scanner scanner = new Scanner(System.in);
+int value = scanner.nextInt();  // Read an integer
 ```
 
-Combine this with `substring()` to extract the month, date, and year, then convert each into an `int` with `Integer.parseInt()`.
-The rest of the program is logic!
+### 2.2 Using a Loop
 
-### 2.3 Other Hints
+Use a `while` loop to keep reading values until -999 is entered:
 
-- The month is the first thing you want to check.
-- The year only matters in February.
-- Work on the other months first.
+```java
+int value = scanner.nextInt();
+while (value != -999) {
+    // Process the value
+    value = scanner.nextInt();
+}
+```
+
+### 2.3 Calculating Average
+
+Remember that average = total / count. Be careful to avoid division by zero!
+
+```java
+double average = total / count;
+```
 
 ---
 
 ## 3. Grading Criteria
 
-- 30 points - The program can tell if the input is a date.
-- 30 points - The program correctly handles non-leap year dates.
-- 30 points - The program correctly handles leap year dates.
+- 30 points - The program can tell if the input is valid.
+- 30 points - The program correctly outputs average.
+- 30 points - The program correctly outputs total.
 - 10 points - The source code is reasonably formatted.
-
----
-
-## 4. A Postscript About Time
-
-This program may have been difficult, but you have only scratched the surface. Time and dates are complicated by many factors, including daylight savings, odd time zones, historical calendar conversions, governmental policy, and leap seconds.
-
-Take this lesson to heart: **Do not meddle with time.**
-
-In your future career:
-
-- Rely on libraries others have provided for you.
-- Ask yourself: do you actually care about the actual time, or just internal consistency?
-
-Video Reference: Computerphile - The Problem with Time & Dates (Tim Scott)

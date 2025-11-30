@@ -3,55 +3,49 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a date (MM/DD/YYYY): ");
-        String date = scanner.nextLine();
+        System.out.println("Enter daily rainfall amounts (enter -999 to stop):");
+
+        // TODO: Implement rainfall calculation logic
+        // 1. Read rainfall values until -999 is entered
+        // 2. Only count non-negative values (ignore negative values except -999)
+        // 3. Calculate and print the total rainfall
+        // 4. Calculate and print the average rainfall
+
         scanner.close();
-
-        // TODO: Implement date validation logic
-        // 1. Parse the date string to extract month, day, and year
-        // 2. Validate the month (1-12)
-        // 3. Validate the day based on the month and leap year rules
-        // 4. Print whether the date is valid or why it is invalid
-
     }
 
     /**
-     * Checks if a given year is a leap year.
+     * Calculates the total rainfall from an array of daily measurements.
+     * Only non-negative values should be counted.
      * 
-     * Leap year rules:
-     * - A year not divisible by 4 is a normal year.
-     * - A year divisible by 4 is a leap year except...
-     * - A year divisible by 100 is not a leap year except...
-     * - A year divisible by 400 is a leap year.
-     * 
-     * @param year the year to check
-     * @return true if the year is a leap year, false otherwise
+     * @param rainfallValues array of rainfall measurements
+     * @return the total rainfall
      */
-    public static boolean isLeapYear(int year) {
-        // TODO: Implement leap year logic
+    public static double calculateTotal(double[] rainfallValues) {
+        // TODO: Implement total calculation
+        return 0.0;
+    }
+
+    /**
+     * Calculates the average rainfall from an array of daily measurements.
+     * Only non-negative values should be counted.
+     * 
+     * @param rainfallValues array of rainfall measurements
+     * @return the average rainfall, or 0.0 if no valid measurements
+     */
+    public static double calculateAverage(double[] rainfallValues) {
+        // TODO: Implement average calculation
+        return 0.0;
+    }
+
+    /**
+     * Checks if a rainfall value is valid (non-negative).
+     * 
+     * @param value the rainfall value to check
+     * @return true if the value is valid (>= 0), false otherwise
+     */
+    public static boolean isValidRainfall(double value) {
+        // TODO: Implement validation
         return false;
-    }
-
-    /**
-     * Returns the number of days in a given month.
-     * 
-     * @param month the month (1-12)
-     * @param year the year (used to determine leap year for February)
-     * @return the number of days in the month, or -1 if month is invalid
-     */
-    public static int getDaysInMonth(int month, int year) {
-        // TODO: Implement days in month logic
-        return -1;
-    }
-
-    /**
-     * Validates a date string in MM/DD/YYYY format.
-     * 
-     * @param dateStr the date string to validate
-     * @return a message indicating whether the date is valid or why it is invalid
-     */
-    public static String validateDate(String dateStr) {
-        // TODO: Implement date validation logic
-        return "Not implemented yet";
     }
 }
