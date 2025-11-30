@@ -4,8 +4,8 @@
 
 ## Abstract
 
-This lab is an exercise that goes over `if/else` statements or `switch` statements, modular arithmetic, String indices, and converting Strings to integers.  
-It is adapted from Savitch’s Java book.
+This lab is an exercise that goes over `if/else` statements or `switch` statements, modular arithmetic, String methods, and converting Strings to integers.  
+It is adapted from Savitch's Java book.
 
 ---
 
@@ -28,61 +28,76 @@ Write a program that, given a string as an input, tests if the given string is a
 
 **Examples:**
 
-- 1644 → leap year
-- 1645 → not a leap year
-- 1600 → leap year
-- 1700 → not a leap year
+- 1644 -> leap year
+- 1645 -> not a leap year
+- 1600 -> leap year
+- 1700 -> not a leap year
 
 You will need to think of a way to arrange the logic of these statements. Think about different ways to categorize leap years and non-leap years.
 
-> **Note:** The Gregorian Calendar is the most widely used civil calendar, instituted by Pope Gregory XIII (1572–1585). Some countries resisted using it until well into the 1900s.
+> **Note:** The Gregorian Calendar is the most widely used civil calendar, instituted by Pope Gregory XIII (1572-1585). Some countries resisted using it until well into the 1900s.
 
 ---
 
 ## 2. Hints
 
-To complete this assignment, you will need to utilize some methods not used in class. Start by reading in the user’s input using `input()`.
+To complete this assignment, you will need to utilize some methods not used in class. Start by reading in the user's input using `Scanner`.
 
-### 2.1 Slicing a String
+### 2.1 Getting a Substring
 
-To get a small portion of the string, use slice notation:
+To get a small portion of the string, use the `substring()` method:
 
-```python
-s = "My name"
+```java
+String s = "My name";
 
-s2 = s[0:2]  # "My"
-s3 = s[3:6]  # "nam"
-s4 = s[3:]   # "name"
-s5 = s[3]    # "n"
-space = s[2:3]  # " "
+String s2 = s.substring(0, 2);  // "My"
+String s3 = s.substring(3, 6);  // "nam"
+String s4 = s.substring(3);     // "name"
+char c = s.charAt(3);           // 'n'
+String space = s.substring(2, 3);  // " "
 ```
-Slicing returns a substring from start to, but not including, end.
-Indices in Python start at 0.
+
+`substring(start, end)` returns a substring from start to, but not including, end.
+Indices in Java start at 0.
+
 ### 2.2 Converting Strings to Integers
-Use int() to convert a string into an integer:
-```python
-s = "123"
-i = int(s)  # 123
+
+Use `Integer.parseInt()` to convert a string into an integer:
+
+```java
+String s = "123";
+int i = Integer.parseInt(s);  // 123
 ```
 
-Combine this with slicing to extract the month, date, and year, then convert each into an int with int().
+Combine this with `substring()` to extract the month, date, and year, then convert each into an `int` with `Integer.parseInt()`.
 The rest of the program is logic!
 
 ### 2.3 Other Hints
-The month is the first thing you want to check.
-The year only matters in February.
-Work on the other months first.
+
+- The month is the first thing you want to check.
+- The year only matters in February.
+- Work on the other months first.
+
+---
+
 ## 3. Grading Criteria
-30 points – The program can tell if the input is a date.
-30 points – The program correctly handles non-leap year dates.
-30 points – The program correctly handles leap year dates.
-10 points – The source code is reasonably formatted.
+
+- 30 points - The program can tell if the input is a date.
+- 30 points - The program correctly handles non-leap year dates.
+- 30 points - The program correctly handles leap year dates.
+- 10 points - The source code is reasonably formatted.
+
+---
+
 ## 4. A Postscript About Time
+
 This program may have been difficult, but you have only scratched the surface. Time and dates are complicated by many factors, including daylight savings, odd time zones, historical calendar conversions, governmental policy, and leap seconds.
-Take this lesson to heart: Do not meddle with time.
+
+Take this lesson to heart: **Do not meddle with time.**
 
 In your future career:
 
-Rely on libraries others have provided for you.
-Ask yourself: do you actually care about the actual time, or just internal consistency?
-📺 Video Reference: Computerphile – The Problem with Time & Dates (Tim Scott)
+- Rely on libraries others have provided for you.
+- Ask yourself: do you actually care about the actual time, or just internal consistency?
+
+Video Reference: Computerphile - The Problem with Time & Dates (Tim Scott)

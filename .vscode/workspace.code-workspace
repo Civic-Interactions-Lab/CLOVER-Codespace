@@ -3,7 +3,7 @@
   "settings": {
     "workbench.startupEditor": "none",
     "workbench.editorAssociations": {
-      "*.py": "default"
+      "*.java": "default"
     },
     "workbench.restoreEditorsToPreviousSessions": false,
     "workbench.editor.openSideBySideDirection": "right"
