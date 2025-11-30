@@ -28,10 +28,10 @@ public class Main {
 
     /**
      * Calculates the average rainfall from an array of daily measurements.
-     * Only non-negative values should be counted.
+     * Only non-negative values should be counted as valid measurements.
      * 
      * @param rainfallValues array of rainfall measurements
-     * @return the average rainfall, or 0.0 if no valid measurements
+     * @return the average rainfall, or 0.0 if no valid (non-negative) measurements
      */
     public static double calculateAverage(double[] rainfallValues) {
         // TODO: Implement average calculation
