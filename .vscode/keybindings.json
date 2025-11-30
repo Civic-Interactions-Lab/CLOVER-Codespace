@@ -1,15 +1,15 @@
 [
-  // Make F5 behave like "Run Without Debugging" for Python files
+  // Make F5 run the current Java file
   {
     "key": "f5",
-    "command": "python.execInTerminal",
-    "when": "resourceLangId == python"
+    "command": "java.debug.runJavaFile",
+    "when": "resourceLangId == java"
   },
-  // A second obvious key: Ctrl+Enter runs current Python file
+  // A second obvious key: Ctrl+Enter runs current Java file
   {
     "key": "ctrl+enter",
-    "command": "python.execInTerminal",
-    "when": "resourceLangId == python && editorTextFocus"
+    "command": "java.debug.runJavaFile",
+    "when": "resourceLangId == java && editorTextFocus"
   },
   // Hide Copilot setup automatically
   {

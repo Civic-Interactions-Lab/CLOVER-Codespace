@@ -11,7 +11,7 @@
   "problems.showCurrentInStatus": false,
   // Editor comfort
   "editor.fontSize": 14,
-  "editor.tabSize":2,
+  "editor.tabSize": 2,
   "editor.suggest.showWords": true,
   "editor.quickSuggestions": {
     "comments": "off",
@@ -21,8 +21,9 @@
   "editor.parameterHints.enabled": false,
   "editor.hover.enabled": false,
   "editor.codeActionsOnSave": {},
-  // Python: Don't show stock run button.
- "debug.python.debugJustMyCode": false,
+  // Java Settings
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.autobuild.enabled": true,
   // Comprehensive GitHub Copilot blocking and UI hiding
   "github.copilot.enable": {
     "*": false,
@@ -30,6 +31,7 @@
     "markdown": false,
     "scminput": false,
     "python": false,
+    "java": false,
     "json": false,
     "jsonc": false
   },
