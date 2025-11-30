@@ -1,49 +1,17 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter daily rainfall amounts (enter -999 to stop):");
 
-        ArrayList<Double> rainfallList = new ArrayList<>();
-        int heavyRainDays = 0;
-
-        while (true) {
-            int value = scanner.nextInt();
-
-            if (value == -999) {
-                break;
-            }
-
-            if (value < 0) {
-                System.out.println("Invalid rainfall, please enter a non-negative value or -999 to finish.");
-                continue;
-            }
-
-            rainfallList.add((double) value);
-            if (value >= 10) {
-                heavyRainDays++;
-            }
-        }
+        // TODO: Implement rainfall calculation logic
+        // 1. Read rainfall values until -999 is entered
+        // 2. Only count non-negative values (ignore negative values except -999)
+        // 3. Calculate and print the total rainfall
+        // 4. Calculate and print the average rainfall
 
         scanner.close();
-
-        if (rainfallList.isEmpty()) {
-            System.out.println("No rainfall data entered.");
-        } else {
-            double[] rainfallValues = new double[rainfallList.size()];
-            for (int i = 0; i < rainfallList.size(); i++) {
-                rainfallValues[i] = rainfallList.get(i);
-            }
-
-            double total = calculateTotal(rainfallValues);
-            double average = calculateAverage(rainfallValues);
-
-            System.out.println("Total rainfall: " + total);
-            System.out.println("Average rainfall: " + average);
-            System.out.println("Number of heavy rain days (>= 10 mm): " + heavyRainDays);
-        }
     }
 
     /**
@@ -54,13 +22,8 @@ public class Main {
      * @return the total rainfall
      */
     public static double calculateTotal(double[] rainfallValues) {
-        double total = 0.0;
-        for (double value : rainfallValues) {
-            if (isValidRainfall(value)) {
-                total += value;
-            }
-        }
-        return total;
+        // TODO: Implement total calculation
+        return 0.0;
     }
 
     /**
@@ -71,18 +34,8 @@ public class Main {
      * @return the average rainfall, or 0.0 if no valid (non-negative) measurements
      */
     public static double calculateAverage(double[] rainfallValues) {
-        int count = 0;
-        double total = 0.0;
-        for (double value : rainfallValues) {
-            if (isValidRainfall(value)) {
-                total += value;
-                count++;
-            }
-        }
-        if (count == 0) {
-            return 0.0;
-        }
-        return total / count;
+        // TODO: Implement average calculation
+        return 0.0;
     }
 
     /**
@@ -92,6 +45,7 @@ public class Main {
      * @return true if the value is valid (>= 0), false otherwise
      */
     public static boolean isValidRainfall(double value) {
-        return value >= 0;
+        // TODO: Implement validation
+        return false;
     }
 }
