@@ -1,12 +1,41 @@
 #!/bin/bash
-# Run script for the Rainfall Problem Java assignment
-# Compiles and runs Main.java
+# Run script for Java assignments
+# Compiles and runs the specified Java file (or the file passed as argument)
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Compile Main.java
-echo "Compiling Main.java..."
-javac "$SCRIPT_DIR/Main.java" 2>&1
+# Determine which Java file to run
+if [ -n "$1" ]; then
+    # Use the file passed as argument
+    JAVA_FILE="$1"
+else
+    echo "Error: No Java file specified"
+    echo "Usage: .run.sh <JavaFile.java>"
+    exit 1
+fi
+
+# Validate the file has a .java extension
+if [[ ! "$JAVA_FILE" =~ \.java$ ]]; then
+    echo "Error: File must have a .java extension"
+    exit 1
+fi
+
+# Validate the file exists
+if [ ! -f "$JAVA_FILE" ]; then
+    echo "Error: File '$JAVA_FILE' not found"
+    exit 1
+fi
+
+# Extract the filename without path and extension
+FILENAME=$(basename "$JAVA_FILE")
+CLASSNAME="${FILENAME%.java}"
+
+# Get the directory containing the Java file
+FILE_DIR=$(dirname "$JAVA_FILE")
+
+# Compile the Java file
+echo "Compiling $FILENAME..."
+javac "$JAVA_FILE" 2>&1
 
 if [ $? -ne 0 ]; then
     echo "Compilation failed!"
@@ -16,4 +45,4 @@ fi
 # Run the program
 echo "Running program..."
 echo "---"
-java -cp "$SCRIPT_DIR" Main
+java -cp "$FILE_DIR" "$CLASSNAME"
