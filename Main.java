@@ -1,51 +1,16 @@
+// Assignment skeleton - implementations intentionally removed so students can complete the tasks.
+// Replace the TODO sections with your implementations.
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter daily rainfall amounts (enter -999 to stop):");
+        System.out.println("Task 1: Parity check (x and y)");
+        System.out.println("  - We have two integers: x and y. Write an if statement that checks if one of them is even and the other is odd.");
+        System.out.println("  - Example: x = 4, y = 7 -> one even and one odd? true\n");
 
-        // TODO: Implement rainfall calculation logic
-        // 1. Read rainfall values until -999 is entered
-        // 2. Only count non-negative values (ignore negative values except -999)
-        // 3. Calculate and print the total rainfall
-        // 4. Calculate and print the average rainfall
+        System.out.println("Task 2: Vowel counter method");
+        System.out.println("  - Write a method that is passed a String and returns the number of vowels it contains (a,e,i,o,u).\n");
 
-        scanner.close();
-    }
-
-    /**
-     * Calculates the total rainfall from an array of daily measurements.
-     * Only non-negative values should be counted.
-     * 
-     * @param rainfallValues array of rainfall measurements
-     * @return the total rainfall
-     */
-    public static double calculateTotal(double[] rainfallValues) {
-        // TODO: Implement total calculation
-        return 0.0;
-    }
-
-    /**
-     * Calculates the average rainfall from an array of daily measurements.
-     * Only non-negative values should be counted as valid measurements.
-     * 
-     * @param rainfallValues array of rainfall measurements
-     * @return the average rainfall, or 0.0 if no valid (non-negative) measurements
-     */
-    public static double calculateAverage(double[] rainfallValues) {
-        // TODO: Implement average calculation
-        return 0.0;
-    }
-
-    /**
-     * Checks if a rainfall value is valid (non-negative).
-     * 
-     * @param value the rainfall value to check
-     * @return true if the value is valid (>= 0), false otherwise
-     */
-    public static boolean isValidRainfall(double value) {
-        // TODO: Implement validation
-        return false;
     }
 }
