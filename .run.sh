@@ -1,6 +1,6 @@
 #!/bin/bash
 # Run script for Java assignments
-# Compiles and runs the specified Java file (or the file passed as argument)
+# Compiles and runs the specified Java file
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -8,10 +8,22 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [ -n "$1" ]; then
     # Use the file passed as argument
     JAVA_FILE="$1"
+elif [ -n "$VSCODE_FILE" ]; then
+    # Use VSCode environment variable if available
+    JAVA_FILE="$VSCODE_FILE"
+elif [ -n "$FILE" ]; then
+    # Alternative environment variable
+    JAVA_FILE="$FILE"
 else
-    echo "Error: No Java file specified"
-    echo "Usage: .run.sh <JavaFile.java>"
-    exit 1
+    # No argument provided - find the most recently modified .java file in the script directory
+    JAVA_FILE=$(ls -t "$SCRIPT_DIR"/*.java 2>/dev/null | head -1)
+    
+    if [ -z "$JAVA_FILE" ]; then
+        echo "Error: No Java files found in the current directory"
+        exit 1
+    fi
+    
+    echo "Running most recently modified Java file: $(basename "$JAVA_FILE")"
 fi
 
 # Validate the file has a .java extension
