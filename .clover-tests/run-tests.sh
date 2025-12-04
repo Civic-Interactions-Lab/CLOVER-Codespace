@@ -1,13 +1,13 @@
 #!/bin/bash
-# Run JUnit tests for student's Main.java implementation
+# Run JUnit tests for student's Rainfall.java implementation
 # This script is hidden from students and used by instructors to evaluate submissions
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
-# Check if Main.java exists
-if [ ! -f "$PROJECT_DIR/Main.java" ]; then
-    echo "Error: Main.java not found in project directory"
+# Check if Rainfall.java exists
+if [ ! -f "$PROJECT_DIR/Rainfall.java" ]; then
+    echo "Error: Rainfall.java not found in project directory"
     exit 1
 fi
 
@@ -23,13 +23,13 @@ if [ ! -f "$JUNIT_JAR" ]; then
 fi
 
 # Copy source files to temp directory
-cp "$PROJECT_DIR/Main.java" "$TEMP_DIR/"
-cp "$SCRIPT_DIR/MainTest.java" "$TEMP_DIR/"
+cp "$PROJECT_DIR/Rainfall.java" "$TEMP_DIR/"
+cp "$SCRIPT_DIR/RainfallTest.java" "$TEMP_DIR/"
 
 # Compile
 echo "Compiling..."
 cd "$TEMP_DIR"
-javac -cp "$JUNIT_JAR" Main.java MainTest.java 2>&1
+javac -cp "$JUNIT_JAR" Rainfall.java RainfallTest.java 2>&1
 
 if [ $? -ne 0 ]; then
     echo "Compilation failed!"
