@@ -1,12 +1,29 @@
 #!/bin/bash
 # Run script for Java assignments
-# Compiles and runs the specified Java file
+# First runs unit tests with LeetCode-style output, then runs the Java file interactively
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Step 1: Run LeetCode-style test runner
+TEST_RUNNER="$SCRIPT_DIR/.clover-tests/leetcode-runner.sh"
+
+if [ -f "$TEST_RUNNER" ]; then
+    bash "$TEST_RUNNER"
+    echo ""
+    echo "=================================================="
+    echo ""
+else
+    echo "Warning: Test runner not found, skipping tests"
+    echo ""
+fi
+
+# Step 2: Run the Java file interactively
 # Determine which Java file to run
-if [ -n "$1" ]; then
-    # Use the file passed as argument
+if [ -n "$2" ]; then
+    # Use the file passed as second argument (after --test flag)
+    JAVA_FILE="$2"
+elif [ -n "$1" ] && [ "$1" != "--test" ] && [ "$1" != "-t" ]; then
+    # Use the file passed as first argument
     JAVA_FILE="$1"
 elif [ -n "$VSCODE_FILE" ]; then
     # Use VSCode environment variable if available
