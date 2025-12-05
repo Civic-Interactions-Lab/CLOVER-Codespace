@@ -73,5 +73,6 @@
     "**/.*": true
   },
   "clover.debug.apiUrl": "Dev API",
+  "clover.bugPercentage": 0,
   "testing.automaticallyOpenTestResults": "never"
 }
