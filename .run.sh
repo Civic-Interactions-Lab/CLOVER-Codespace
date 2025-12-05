@@ -5,10 +5,10 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Step 1: Run LeetCode-style test runner
-TEST_RUNNER="$SCRIPT_DIR/.clover-tests/leetcode-runner.py"
+TEST_RUNNER="$SCRIPT_DIR/.clover-tests/leetcode-runner.sh"
 
 if [ -f "$TEST_RUNNER" ]; then
-    python3 "$TEST_RUNNER"
+    bash "$TEST_RUNNER"
     echo ""
     echo "=================================================="
     echo ""
