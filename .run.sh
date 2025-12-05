@@ -9,7 +9,6 @@ TEST_RUNNER="$SCRIPT_DIR/.clover-tests/leetcode-runner.py"
 
 if [ -f "$TEST_RUNNER" ]; then
     python3 "$TEST_RUNNER"
-    TEST_EXIT_CODE=$?
     echo ""
     echo "=================================================="
     echo ""

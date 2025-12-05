@@ -71,21 +71,31 @@ def run_tests():
     with tempfile.TemporaryDirectory() as temp_dir:
         temp_path = Path(temp_dir)
         
-        # Download JUnit if not available
+        # Check for JUnit JAR
         junit_jar = script_dir / "junit-platform-console-standalone.jar"
         junit_jar = junit_jar.resolve()  # Resolve to absolute path and symbolic links
         if not junit_jar.exists():
-            print("Downloading test framework...")
-            import urllib.request
-            # Note: Using Maven Central which provides HTTPS
-            urllib.request.urlretrieve(
-                "https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.10.0/junit-platform-console-standalone-1.10.0.jar",
-                junit_jar
-            )
+            # JUnit JAR should be pre-downloaded and committed to the repository
+            # for security and to avoid runtime downloads
+            print("Error: JUnit test framework not found.")
+            print("Expected location:", junit_jar)
+            print("Please ensure the JUnit JAR is present in .clover-tests/")
+            return 1
         
         # Copy source files to temp directory
         shutil.copy(rainfall_file, temp_path / "Rainfall.java")
         shutil.copy(script_dir / "RainfallTest.java", temp_path / "RainfallTest.java")
+        
+        def filter_student_errors(error_text):
+            """Filter compilation errors to show only student code errors"""
+            if not error_text:
+                return ""
+            if "RainfallTest.java" not in error_text:
+                return error_text
+            # Filter out lines referencing test file
+            filtered_lines = [line for line in error_text.split('\n') 
+                            if line and "RainfallTest.java" not in line]
+            return '\n'.join(filtered_lines)
         
         # Compile
         print("Compiling...")
@@ -98,14 +108,9 @@ def run_tests():
         
         if compile_result.returncode != 0:
             # Only show compilation errors related to student's code
-            errors = compile_result.stderr
-            if errors and "RainfallTest.java" not in errors:
-                print(errors)
-            elif errors:
-                # Filter out test file errors
-                for line in errors.split('\n'):
-                    if line and "RainfallTest.java" not in line:
-                        print(line)
+            filtered_errors = filter_student_errors(compile_result.stderr)
+            if filtered_errors:
+                print(filtered_errors)
             print("Compilation failed!")
             return 1
         
