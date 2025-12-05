@@ -71,16 +71,20 @@ def run_tests():
     with tempfile.TemporaryDirectory() as temp_dir:
         temp_path = Path(temp_dir)
         
-        # Check for JUnit JAR
+        # Check for JUnit JAR and download if needed
         junit_jar = script_dir / "junit-platform-console-standalone.jar"
         junit_jar = junit_jar.resolve()  # Resolve to absolute path and symbolic links
         if not junit_jar.exists():
-            # JUnit JAR should be pre-downloaded and committed to the repository
-            # for security and to avoid runtime downloads
-            print("Error: JUnit test framework not found.")
-            print("Expected location:", junit_jar)
-            print("Please ensure the JUnit JAR is present in .clover-tests/")
-            return 1
+            print("Downloading test framework...")
+            import urllib.request
+            try:
+                # Download from Maven Central over HTTPS
+                jar_url = "https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.10.0/junit-platform-console-standalone-1.10.0.jar"
+                urllib.request.urlretrieve(jar_url, junit_jar)
+            except Exception as e:
+                print(f"Error downloading JUnit: {e}")
+                print("Please ensure you have internet connectivity.")
+                return 1
         
         # Copy source files to temp directory
         shutil.copy(rainfall_file, temp_path / "Rainfall.java")
