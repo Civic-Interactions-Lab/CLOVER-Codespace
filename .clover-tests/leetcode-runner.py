@@ -29,11 +29,9 @@ def validate_function_signatures(rainfall_file):
     
     missing_functions = []
     for func_name, signature in required_functions:
-        # Check if the function name exists
-        if func_name not in content:
-            missing_functions.append(func_name)
-        # More lenient check - just check that the function is declared as public static with correct name
-        elif f'public static' not in content or f'{func_name}(' not in content:
+        # Check if the function exists with public static modifier
+        pattern = f'public\\s+static\\s+.*\\s+{func_name}\\s*\\('
+        if not re.search(pattern, content):
             missing_functions.append(func_name)
     
     if missing_functions:
@@ -75,10 +73,11 @@ def run_tests():
         
         # Download JUnit if not available
         junit_jar = script_dir / "junit-platform-console-standalone.jar"
-        junit_jar = junit_jar.resolve()  # Get absolute path
+        junit_jar = junit_jar.resolve()  # Resolve to absolute path and symbolic links
         if not junit_jar.exists():
             print("Downloading test framework...")
             import urllib.request
+            # Note: Using Maven Central which provides HTTPS
             urllib.request.urlretrieve(
                 "https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.10.0/junit-platform-console-standalone-1.10.0.jar",
                 junit_jar
@@ -100,7 +99,7 @@ def run_tests():
         if compile_result.returncode != 0:
             # Only show compilation errors related to student's code
             errors = compile_result.stderr
-            if errors and not "RainfallTest.java" in errors:
+            if errors and "RainfallTest.java" not in errors:
                 print(errors)
             elif errors:
                 # Filter out test file errors
@@ -151,14 +150,17 @@ def run_tests():
                         tests.append({'name': test_name, 'status': 'SUCCESSFUL'})
         
         # Display results in LeetCode style
+        PASSED_STATUS = 'SUCCESSFUL'
+        FAILED_STATUS = 'FAILED'
+        
         for idx, test in enumerate(tests, 1):
-            if test['status'] == 'SUCCESSFUL':
+            if test['status'] == PASSED_STATUS:
                 print(f"Test Case {idx}: ✓ PASSED")
             else:
                 print(f"Test Case {idx}: ✗ FAILED")
         
         # Get summary statistics
-        passed = sum(1 for t in tests if t['status'] == 'SUCCESSFUL')
+        passed = sum(1 for t in tests if t['status'] == PASSED_STATUS)
         failed = len(tests) - passed
         
         print("")
