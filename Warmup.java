@@ -3,7 +3,7 @@
 
 import java.util.Scanner;
 
-public class Main {
+public class Warmup {
     public static void main(String[] args) {
         System.out.println("Task 1: Parity check (x and y)");
         System.out.println("  - We have two integers: x and y. Write an if statement that checks if one of them is even and the other is odd.");
