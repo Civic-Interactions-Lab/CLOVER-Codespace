@@ -1,14 +1,15 @@
 {
-  "name": "Novice Python (CLOVER)",
-  "image": "mcr.microsoft.com/devcontainers/python:3.11",
-  "updateContentCommand": "pip3 install --no-cache-dir -U pip",
+  "name": "Novice Java (CLOVER)",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-python.python",
-        "ms-python.debugpy",
-        "ms-python.vscode-pylance",
-        "capstone-team-2.tu-clover@prerelease",        // Prevent GitHub Copilot and other AI extensions from being installed
+        "vscjava.vscode-java-pack",
+        "redhat.java",
+        "vscjava.vscode-java-debug",
+        "vscjava.vscode-java-test",
+        "capstone-team-2.tu-clover@prerelease",
+        // Prevent GitHub Copilot and other AI extensions from being installed
         "-GitHub.copilot",
         "-GitHub.copilot-chat",
         "-GitHub.copilot-labs",
@@ -39,22 +40,20 @@
         "scm.showIncomingChanges": false,
         "workbench.view.alwaysShowHeaderActions": false,
 
-        // Python Settings
-        "python.defaultInterpreterPath": "/usr/local/bin/python",
-        "python.analysis.autoImportCompletions": false,
-        "python.showStartPage": false,
-        "python.createEnvironment.prompt": false,
-        "python.terminal.activateEnvironment": false,
-        "python.testing.pytestEnabled": false,
-        "python.languageServer": "Default",
-        "jupyter.logging.level": "error",
+        // Java Settings
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.autobuild.enabled": true,
+        "java.codeGeneration.useBlocks": true,
+        "java.compile.nullAnalysis.mode": "automatic",
+        // Hide default Java Run/Debug buttons (only show CLOVER's run button)
+        "java.debug.settings.enableRunDebugCodeLens": false,
 
         // --- Comprehensive AI/Copilot Blocking ---
         // This is a multi-layered defense to prevent any AI features from running or being visible.
 
         // 1. Disable all Copilot functionality
         "github.copilot.enable": {
-          "*": false, "plaintext": false, "markdown": false, "scminput": false, "python": false
+          "*": false, "plaintext": false, "markdown": false, "scminput": false, "java": false
         },
         "github.copilot.inlineSuggest.enable": false,
         "github.copilot.chat.enable": false,
@@ -68,7 +67,6 @@
         "chat.setupHidden": true,
         "workbench.statusBar.feedback.visible": false,
 
-
         // 4. Block other common AI assistants
         "tabnine.disable_auto_update": true,
         "tabnine.binary_notification": false,
@@ -78,7 +76,6 @@
       }
     }
   },
-  // Remove lifecycle scripts as they are no longer needed
   "postCreateCommand": null,
   "postAttachCommand": null,
   "hostRequirements": { "cpus": 2, "memory": "4gb" }

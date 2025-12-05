@@ -11,7 +11,7 @@
   "problems.showCurrentInStatus": false,
   // Editor comfort
   "editor.fontSize": 14,
-  "editor.tabSize":2,
+  "editor.tabSize": 2,
   "editor.suggest.showWords": true,
   "editor.quickSuggestions": {
     "comments": "off",
@@ -21,8 +21,11 @@
   "editor.parameterHints.enabled": false,
   "editor.hover.enabled": false,
   "editor.codeActionsOnSave": {},
-  // Python: Don't show stock run button.
- "debug.python.debugJustMyCode": false,
+  // Java Settings
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.autobuild.enabled": true,
+  // Hide default Java Run/Debug buttons (only show CLOVER's run button)
+  "java.debug.settings.enableRunDebugCodeLens": false,
   // Comprehensive GitHub Copilot blocking and UI hiding
   "github.copilot.enable": {
     "*": false,
@@ -30,6 +33,7 @@
     "markdown": false,
     "scminput": false,
     "python": false,
+    "java": false,
     "json": false,
     "jsonc": false
   },
@@ -68,12 +72,7 @@
   "files.watcherExclude": {
     "**/.*": true
   },
-  "clover.debug.apiUrl": "Main API",
- "clover.classId": "d10b965e-909c-4620-9c3f-6e4cb0045382",
-  "clover.classCode": "1051",
-  "clover.classTitle": "Introduction to Problem Solving & Programming in Python",
-  "clover.preSurveyId": "c6829361-0e00-455d-93de-8c07a82b6dac",
-  "clover.postSurveyId": "a7246307-dffb-405c-a2d3-421b36dbfae3",
-  "clover.classHexColor": "#FDE047",
+  "clover.debug.apiUrl": "Dev API",
+  "clover.bugPercentage": 60,
   "testing.automaticallyOpenTestResults": "never"
 }
