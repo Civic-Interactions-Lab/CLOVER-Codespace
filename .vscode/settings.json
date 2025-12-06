@@ -75,5 +75,8 @@
   "clover.debug.apiUrl": "Main API",
   "clover.bugPercentage": 0,
   "clover.preSurveyId": "fb8b6598-5ba1-4e52-b920-92839e5d72c4",
+   "clover.classId": "27997ea4-7f9d-42d3-a716-e1c393a8edac",
+  "clover.classCode": "W1068",
+  "clover.classTitle": "Warmup Problem 1068",
   "testing.automaticallyOpenTestResults": "never"
 }
