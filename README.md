@@ -28,7 +28,7 @@ Number of heavy rain days (>= 10 mm) = 3
 
 The program processes an input consisting of daily rainfall measurements (non-negative numbers) until it encounters the integer -999. The program should output the total rainfall, average rainfall, and the number of heavy rain days (days with rainfall >= 10 mm).
 
-Your program should be careful to correct bad numeric values entered by the user. If a user enters a negative number (other than -999), it should be ignored and not included in the calculations. The sentinel value -999 is used only to signal the end of input.
+Your program should be careful to handle invalid numeric values entered by the user. If a user enters a negative number (other than -999), it should be ignored and not included in the calculations. The sentinel value -999 is used only to signal the end of input.
 
 ## Stylistic Guidelines
 When handling numeric data, you are expected to choose appropriately between types int and double.
