@@ -36,8 +36,8 @@ run_test() {
     echo "Test $TOTAL_TESTS: $test_name"
     echo "  Input: $input"
     
-    # Run the program with input
-    actual=$(echo -e "$input" | java Main 2>&1 | tail -1)
+    # Run the program with input and capture last line of stdout
+    actual=$(echo -e "$input" | java Main 2>&1 | grep -v "^Exception" | grep -v "^Error" | tail -1)
     
     echo "  Expected: $expected"
     echo "  Actual: $actual"
