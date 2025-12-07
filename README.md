@@ -1,14 +1,6 @@
 # The Rainfall Problem
 
-**Author:** Elliot Soloway
-
-## Abstract
-
-The rainfall problem is a programming exercise where users input daily rainfall amounts until a sentinel value (e.g., -999) is entered, after which the program calculates and reports the total and average rainfall.
-
----
-
-## 1. Assignment
+## Assignment
 Write a program that processes an input consisting of daily rainfall measurements (non-negative numbers) until it encounters the integer -999. The program should output the total rainfall, average rainfall, and the number of heavy rain days (days with rainfall >= 10 mm).
 
 **Example:**
@@ -27,45 +19,9 @@ Number of heavy rain days (>= 10 mm) = 3
 
 ---
 
-## 2. Hints
+## Grading Criteria
 
-To complete this assignment, you will need to utilize some methods not used in class.
-
-### 2.1 Reading User Input
-
-Use `Scanner` to read input from the user:
-
-```java
-Scanner scanner = new Scanner(System.in);
-int value = scanner.nextInt();  // Read an integer
-```
-
-### 2.2 Using a Loop
-
-Use a `while` loop to keep reading values until -999 is entered:
-
-```java
-int value = scanner.nextInt();
-while (value != -999) {
-    // Process the value
-    value = scanner.nextInt();
-}
-```
-
-### 2.3 Calculating Average
-
-Remember that average = total / count. Be careful to avoid division by zero!
-
-```java
-double average = total / count;
-```
-
----
-
-## 3. Grading Criteria
-
-- 25 points - The program can tell if the input is valid.
+- 25 points - Proper handling of invalid inputs.
 - 25 points - The program correctly outputs average.
 - 25 points - The program correctly outputs total.
-- 15 points - The program correctly outputs the number of heavy rain days (>= 10 mm).
-- 10 points - The source code is reasonably formatted.
+- 25 points - The program correctly outputs the number of heavy rain days (>= 10 mm).
