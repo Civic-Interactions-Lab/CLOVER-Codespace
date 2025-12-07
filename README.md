@@ -30,6 +30,23 @@ The program processes an input consisting of daily rainfall measurements (non-ne
 
 Your program should be careful to handle invalid numeric values entered by the user. If a user enters a negative number (other than -999), it should be ignored and not included in the calculations. The sentinel value -999 is used only to signal the end of input.
 
+## Testing and Running Your Code
+
+This assignment includes automated tests that will help you verify your implementation. **Your grade will be based on passing these tests**, so it is important to run them frequently as you develop your solution.
+
+To run the tests and execute your program:
+1. Click the **Run** button in your development environment
+2. The automated tests will run first, showing you which test cases pass or fail
+3. After the tests complete, your program will run interactively so you can test it manually
+
+The automated tests check:
+- Input validation (handling negative values and the -999 sentinel)
+- Total rainfall calculation
+- Average rainfall calculation
+- Heavy rain day counting (days with >= 10 mm rainfall)
+
+Use the test results to guide your development. If a test fails, read the test description carefully to understand what your code should be doing differently.
+
 ## Stylistic Guidelines
 When handling numeric data, you are expected to choose appropriately between types int and double.
 
