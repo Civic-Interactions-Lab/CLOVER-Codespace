@@ -1,4 +1,5 @@
 // TODO: Implement rainfall calculation logic
+// You **must** implement the functions outside of the main program.
 // 1. Read rainfall values until -999 is entered
 // 2. Only count non-negative values (ignore negative values except -999)
 // 3. Calculate and print the total rainfall
