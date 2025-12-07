@@ -5,16 +5,16 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
-# Check if Main.java exists
-if [ ! -f "$PROJECT_DIR/Main.java" ]; then
-    echo "Error: Main.java not found in project directory"
+# Check if Warmup.java exists
+if [ ! -f "$PROJECT_DIR/Warmup.java" ]; then
+    echo "Error: Warmup.java not found in project directory"
     exit 1
 fi
 
 # Compile the program
-echo "Compiling Main.java..."
+echo "Compiling Warmup.java..."
 cd "$PROJECT_DIR"
-javac Main.java 2>&1
+javac Warmup.java 2>&1
 if [ $? -ne 0 ]; then
     echo "Compilation failed!"
     exit 1
@@ -37,7 +37,7 @@ run_test() {
     echo "  Input: $input"
     
     # Run the program with input and capture last line of stdout
-    actual=$(echo -e "$input" | java Main 2>&1 | grep -v "^Exception" | grep -v "^Error" | tail -1)
+    actual=$(echo -e "$input" | java Warmup 2>&1 | grep -v "^Exception" | grep -v "^Error" | tail -1)
     
     echo "  Expected: $expected"
     echo "  Actual: $actual"

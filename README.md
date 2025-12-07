@@ -12,7 +12,7 @@ Write a few lines of code that prompts the user to enter a series of words, stop
 
 ## Requirements
 
-Complete the `main` method in `Main.java`:
+Complete the `main` method in `Warmup.java`:
 
 - Read words from user input (one per line)
 - Stop reading when "quit" is entered

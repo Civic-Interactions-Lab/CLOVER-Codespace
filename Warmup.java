@@ -13,7 +13,7 @@
 // Input: quit
 // Output: no words entered
 
-public class Main {
+public class Warmup {
     public static void main(String[] args) {
         // TODO: Implement the program here
         
