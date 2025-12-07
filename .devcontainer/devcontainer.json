@@ -6,7 +6,6 @@
       "extensions": [
         "vscjava.vscode-java-pack",
         "redhat.java",
-        "vscjava.vscode-java-debug",
         "vscjava.vscode-java-test",
         "capstone-team-2.tu-clover@prerelease",
         // Prevent GitHub Copilot and other AI extensions from being installed
