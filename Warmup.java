@@ -1,16 +1,21 @@
-// Assignment skeleton - implementations intentionally removed so students can complete the tasks.
-// Replace the TODO sections with your implementations.
-
-import java.util.Scanner;
+// Warmup Assignment: Longest Word Finder
+// 
+// Write a few lines of code that prompts the user to enter a series of words,
+// stopping when the user has entered the word "quit". The program should then
+// print the length of the longest word entered or "no words entered" if no
+// words other than "quit" were entered.
+//
+// Example:
+// Input: hello world programming quit
+// Output: 11
+//
+// Example:
+// Input: quit
+// Output: no words entered
 
 public class Warmup {
     public static void main(String[] args) {
-        System.out.println("Task 1: Parity check (x and y)");
-        System.out.println("  - We have two integers: x and y. Write an if statement that checks if one of them is even and the other is odd.");
-        System.out.println("  - Example: x = 4, y = 7 -> one even and one odd? true\n");
-
-        System.out.println("Task 2: Vowel counter method");
-        System.out.println("  - Write a method that is passed a String and returns the number of vowels it contains (a,e,i,o,u).\n");
-
+        // TODO: Implement the program here
+        
     }
 }

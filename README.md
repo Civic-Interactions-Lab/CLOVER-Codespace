@@ -1,11 +1,45 @@
-# Warmup Exercises in Java
+# Warmup Exercise: Longest Word Finder
 
-This repository contains a single Java program `Main.java` for two short warmbup exercises:
+This repository contains a Java warmup assignment for students to practice basic programming concepts including:
+- User input with Scanner
+- Loops and conditionals
+- String manipulation
+- Tracking maximum values
 
-1. Check whether two integers (x and y) are such that one is even and the other is odd.
-2. Prompt the user for a string and print the number of vowels it contains.
+## Assignment
 
-Expected example output (approximate):
+Write a few lines of code that prompts the user to enter a series of words, stopping when the user has entered the word "quit". The program should then print the length of the longest word entered or "no words entered" if no words other than "quit" were entered.
 
-Task 1 prints a deterministic parity check (x=4, y=7).
-Task 2 prints the vowel count for the provided line.
+## Requirements
+
+Complete the `main` method in `Warmup.java`:
+
+- Read words from user input (one per line)
+- Stop reading when "quit" is entered
+- Track the longest word length
+- Print the output:
+  - If words were entered: print just the length number (e.g., `11`)
+  - If no words entered: print `no words entered`
+
+You can implement this however you like - there are no required methods or specific data structures you must use.
+
+## Example Output
+
+```
+hello
+world
+programming
+quit
+11
+```
+
+```
+quit
+no words entered
+```
+
+## Testing
+
+Your program will be tested with automated input/output tests. Make sure your output matches exactly:
+- Print only the number (no extra text) when words are entered
+- Print exactly `no words entered` when only quit is entered
