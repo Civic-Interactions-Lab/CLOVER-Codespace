@@ -6,9 +6,7 @@ Users will provide a series of words, and the program will output the length of 
 
 ## The Program
 
-You will write a Java class called Warmup that must be saved into a file called Warmup.java, which should be submitted through Canvas.
-
-Remember that you will be using a Scanner object for console input, so you will need to import java.util.Scanner; into your program.
+You will edit the Java class called Warmup that will be saved into a file called Warmup.java.
 
 Your program will read in words from the user, and it will calculate the length of the longest word. Below is one example log of execution of the program (user input is underlined for the sake of clarity in the log --- you do not need to duplicate this behavior).
 
@@ -33,7 +31,7 @@ Complete the `main` method in `Warmup.java`:
   - If words were entered: print just the length number (e.g., `11`)
   - If no words entered: print `no words entered`
 
-You can implement this however you like - there are no required methods or specific data structures you must use.
+You can implement this however you like, however we will check for the program to have specific inputs and outputs just like the example. **Don't print anything extra like `please input words:`**.
 
 In the log of execution shown, the user entered three words: "hello" (5 letters), "world" (5 letters), and "programming" (11 letters), before entering "quit" to stop. The program then output 11, which is the length of the longest word.
 
