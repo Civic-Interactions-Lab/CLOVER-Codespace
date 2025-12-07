@@ -58,6 +58,8 @@ Your program will be tested with automated input/output tests. Make sure your ou
 
 ## rubric
 
+Your program will be graded using automated tests that check for the following:
+
 * [2 points] Scanner set up properly
 * [2 points] Readable indentation and spacing
 * [3 points] Proper handling of edge cases (empty input, only "quit")
