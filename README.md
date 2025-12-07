@@ -44,6 +44,16 @@ no words entered
 
 In this execution, the user immediately entered "quit" without entering any other words, so the program output "no words entered".
 
+## Output Format
+
+Your program must print only the number representing the length.
+
+**Incorrect:** The longest word is 5  
+**Incorrect:** Length: 5  
+**Correct:** 5
+
+**Note:** The automated tests compare your output exactly. Extra text will cause the test to fail.
+
 ## Stylistic Guidelines
 
 Please indent your code and use whitespace to make your program readable. Give meaningful names to variables in your code. Follow Java's naming and capitalization standards.
