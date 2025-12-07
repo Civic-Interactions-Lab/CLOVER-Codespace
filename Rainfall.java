@@ -10,6 +10,7 @@ public class Rainfall {
         // 2. Only count non-negative values (ignore negative values except -999)
         // 3. Calculate and print the total rainfall
         // 4. Calculate and print the average rainfall
+        // 5. Calculate and print the number of heavy rain days (>= 10 mm)
 
         scanner.close();
     }
@@ -47,5 +48,17 @@ public class Rainfall {
     public static boolean isValidRainfall(double value) {
         // TODO: Implement validation
         return false;
+    }
+
+    /**
+     * Counts the number of days with heavy rainfall (>= 10 mm).
+     * Only non-negative values should be counted as valid measurements.
+     * 
+     * @param rainfallValues array of rainfall measurements
+     * @return the number of days with heavy rainfall (>= 10 mm)
+     */
+    public static int countHeavyRainDays(double[] rainfallValues) {
+        // TODO: Implement heavy rain day counting
+        return 0;
     }
 }
