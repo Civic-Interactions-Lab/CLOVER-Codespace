@@ -9,7 +9,7 @@ The rainfall problem is a programming exercise where users input daily rainfall 
 ---
 
 ## 1. Assignment
-Write a program that processes an input consisting of daily rainfall measurements (non-negative integers) until it encounters the integer -999. The program should output the total rainfall, average rainfall, and the number of heavy rain days (days with rainfall >= 10 mm).
+Write a program that processes an input consisting of daily rainfall measurements (non-negative numbers) until it encounters the integer -999. The program should output the total rainfall, average rainfall, and the number of heavy rain days (days with rainfall >= 10 mm).
 
 **Example:**
 
@@ -20,9 +20,9 @@ Enter daily rainfall amounts (enter -999 to stop):
 0
 15
 -999
-Total rainfall: 45.0
-Average rainfall: 11.25
-Number of heavy rain days (>= 10 mm): 3
+Total rainfall = 45.0
+Average rainfall = 11.25
+Number of heavy rain days (>= 10 mm) = 3
 ```
 
 ---
