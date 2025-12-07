@@ -29,6 +29,10 @@ validate_signatures() {
         missing="${missing}  ✗ isValidRainfall\n    Expected: public static boolean isValidRainfall(double value)\n\n"
     fi
     
+    if ! grep -q "public.*static.*int.*countHeavyRainDays.*double\[\]" "$java_file"; then
+        missing="${missing}  ✗ countHeavyRainDays\n    Expected: public static int countHeavyRainDays(double[] rainfallValues)\n\n"
+    fi
+    
     if [ -n "$missing" ]; then
         echo "=================================================="
         echo "ERROR: Missing or Renamed Functions"
