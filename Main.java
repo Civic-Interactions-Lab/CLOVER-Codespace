@@ -35,16 +35,22 @@ public class Main {
      *   If no words entered: "no words entered"
      */
     public static void main(String[] args) {
-        // TODO: Implement the main method
-        // 1. Create a Scanner to read user input
-        // 2. Create an ArrayList to store words
-        // 3. Loop to read words until "quit" is entered (don't add "quit" to the list)
-        // 4. Convert ArrayList to array and call getLongestWordLength
-        // 5. Print appropriate message based on result
-        
         System.out.println("Warmup Assignment: Longest Word Finder");
         System.out.println("Enter words (type 'quit' to finish):");
         
-        // Your implementation here
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> wordList = new ArrayList<>();
+        
+        // TODO: Write a loop to read words until "quit" is entered
+        // Hint: Use scanner.nextLine() to read each word
+        // Don't add "quit" to the wordList
+        
+        
+        scanner.close();
+        
+        // TODO: Check if wordList is empty
+        // If empty, print "no words entered"
+        // Otherwise, convert to array, call getLongestWordLength, and print result
+        
     }
 }
