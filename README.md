@@ -8,8 +8,6 @@ Users will provide daily rainfall measurements, and the program will output stat
 ## The Program
 You will write a Java class called Rainfall that must be saved into a file called Rainfall.java, which should be submitted through Canvas.
 
-Remember that you will be using a Scanner object for console input, so you will need to import java.util.Scanner; into your program.
-
 Your program will read in daily rainfall measurements for some period of time, and it will calculate statistics about the rainfall. Below is one example log of execution of the program (user input is underlined for the sake of clarity in the log --- you do not need to duplicate this behavior).
 
 **An example run of the program:**
@@ -44,8 +42,6 @@ The automated tests check:
 - Total rainfall calculation
 - Average rainfall calculation
 - Heavy rain day counting (days with >= 10 mm rainfall)
-
-Use the test results to guide your development. If a test fails, read the test description carefully to understand what your code should be doing differently.
 
 ## Stylistic Guidelines
 When handling numeric data, you are expected to choose appropriately between types int and double.
