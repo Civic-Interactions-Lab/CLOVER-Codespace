@@ -4,7 +4,7 @@ This repository contains a Java warmup assignment for students to practice basic
 - User input with Scanner
 - Loops and conditionals
 - String manipulation
-- Arrays/ArrayLists
+- Tracking maximum values
 
 ## Assignment
 
@@ -12,37 +12,34 @@ Write a few lines of code that prompts the user to enter a series of words, stop
 
 ## Requirements
 
-Implement the following in `Main.java`:
+Complete the `main` method in `Main.java`:
 
-1. **Method: `getLongestWordLength(String[] words)`**
-   - Takes an array of words as input
-   - Returns the length of the longest word
-   - Returns 0 if the array is empty or null
+- Read words from user input (one per line)
+- Stop reading when "quit" is entered
+- Track the longest word length
+- Print the output:
+  - If words were entered: print just the length number (e.g., `11`)
+  - If no words entered: print `no words entered`
 
-2. **Method: `main(String[] args)`**
-   - Prompts the user to enter words
-   - Continues reading until "quit" is entered
-   - Stores all words (except "quit") in a collection
-   - Calls `getLongestWordLength` with the collected words
-   - Prints the result:
-     - If words were entered: prints the length of the longest word
-     - If no words entered: prints "no words entered"
+You can implement this however you like - there are no required methods or specific data structures you must use.
 
 ## Example Output
 
 ```
-Warmup Assignment: Longest Word Finder
-Enter words (type 'quit' to finish):
 hello
 world
 programming
 quit
-The longest word has length: 11
+11
 ```
 
 ```
-Warmup Assignment: Longest Word Finder
-Enter words (type 'quit' to finish):
 quit
 no words entered
 ```
+
+## Testing
+
+Your program will be tested with automated input/output tests. Make sure your output matches exactly:
+- Print only the number (no extra text) when words are entered
+- Print exactly `no words entered` when only quit is entered
