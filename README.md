@@ -8,7 +8,7 @@ Users will provide a series of words, and the program will output the length of 
 
 You will edit the Java class called Warmup that will be saved into a file called Warmup.java.
 
-Your program will read in words from the user, and it will calculate the length of the longest word. Below is one example log of execution of the program (user input is underlined for the sake of clarity in the log --- you do not need to duplicate this behavior).
+Your program will read in words from the user, and it will calculate the length of the longest word. Below is one example log of execution of the program.
 
 **an example run of the program**
 
@@ -17,6 +17,8 @@ hello
 world
 programming
 quit
+```
+```
 11
 ```
 
@@ -56,21 +58,10 @@ Your program must print only the number representing the length.
 
 ## Stylistic Guidelines
 
-Please indent your code and use whitespace to make your program readable. Give meaningful names to variables in your code. Follow Java's naming and capitalization standards.
-
-Include a comment at the beginning of your program with basic information and a description of the program.
-
 Your program will be tested with automated input/output tests. Make sure your output matches exactly:
 - Print only the number (no extra text) when words are entered
 - Print exactly `no words entered` when only quit is entered
 
 ## rubric
 
-Your program will be graded using automated tests that check for the following:
-
-* [2 points] Scanner set up properly
-* [2 points] Readable indentation and spacing
-* [3 points] Proper handling of edge cases (empty input, only "quit")
-* [5 points] Correct tracking of longest word length
-* [3 points] Descriptive variable and constant names
-* [5 points] Calculates correct longest word length
+Your program will be graded using automated tests. The automated tests are hidden. The goal is to complete 100% of the test cases!
