@@ -29,7 +29,7 @@ public class Warmup {
         return -1;
     }
 
-    // You may use this function to test your findLongestWordLength. Do not implement any logic here!
+    // You may use this method to test your findLongestWordLength. Do not implement any logic here!
     public static void main(String[] args) {
     }
 }
