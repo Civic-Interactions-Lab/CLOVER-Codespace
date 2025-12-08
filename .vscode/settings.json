@@ -72,7 +72,7 @@
   "files.watcherExclude": {
     "**/.*": true
   },
-  "clover.debug.apiUrl": "Main API",
+  "clover.debug.apiUrl": "Dev API",
   "clover.bugPercentage": 0,
   "clover.preSurveyId": "3e3b7766-8232-49fc-99f2-bf5c05cb611c",
   "clover.postSurveyId": "26a640f2-b38b-4116-9356-3845e55bf128",
