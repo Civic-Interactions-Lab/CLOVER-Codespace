@@ -4,18 +4,26 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Step 1: Run LeetCode-style test runner
-TEST_RUNNER="$SCRIPT_DIR/.clover-tests/integration-tests.sh"
+# Step 1: Run JUnit tests
+echo "Running JUnit tests..."
+echo ""
 
-if [ -f "$TEST_RUNNER" ]; then
-    bash "$TEST_RUNNER"
-    echo ""
-    echo "=================================================="
-    echo ""
-else
-    echo "Warning: Test runner not found, skipping tests"
-    echo ""
+# Compile with JUnit
+javac -cp ".:lib/*" "$SCRIPT_DIR/Warmup.java" 2>&1
+
+if [ $? -ne 0 ]; then
+    echo "Compilation failed!"
+    exit 1
 fi
+
+# Run JUnit tests
+java -jar "$SCRIPT_DIR/lib/junit-platform-console-standalone-1.10.1.jar" \
+    --class-path "$SCRIPT_DIR" \
+    --select-class Warmup
+
+echo ""
+echo "=================================================="
+echo ""
 
 # Step 2: Run the Java file interactively
 # Determine which Java file to run
@@ -62,9 +70,9 @@ CLASSNAME="${FILENAME%.java}"
 # Get the directory containing the Java file
 FILE_DIR=$(dirname "$JAVA_FILE")
 
-# Compile the Java file
+# Compile the Java file with JUnit classpath
 echo "Compiling $FILENAME..."
-javac "$JAVA_FILE" 2>&1
+javac -cp ".:$SCRIPT_DIR/lib/*" "$JAVA_FILE" 2>&1
 
 if [ $? -ne 0 ]; then
     echo "Compilation failed!"
@@ -74,4 +82,4 @@ fi
 # Run the program
 echo "Running program..."
 echo "---"
-java -cp "$FILE_DIR" "$CLASSNAME"
+java -cp "$FILE_DIR:$SCRIPT_DIR/lib/*" "$CLASSNAME"

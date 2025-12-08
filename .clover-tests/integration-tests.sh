@@ -15,7 +15,7 @@ fi
 echo "Compiling..."
 echo ""
 cd "$PROJECT_DIR"
-javac Warmup.java 2>&1
+javac -cp ".:lib/*" Warmup.java 2>&1
 if [ $? -ne 0 ]; then
     echo "Compilation failed!"
     exit 1

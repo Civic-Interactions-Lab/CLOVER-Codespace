@@ -28,6 +28,7 @@ public class Warmup {
 
     @BeforeEach
     public void setUpStreams() {
+        outContent.reset();
         System.setOut(new PrintStream(outContent));
     }
 
@@ -39,6 +40,7 @@ public class Warmup {
 
     private String getLastLine(String output) {
         String[] lines = output.trim().split("\n");
+        if (lines.length == 0 || lines[0].isEmpty()) return "";
         return lines[lines.length - 1].trim();
     }
 

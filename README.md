@@ -34,20 +34,6 @@ no words entered
 
 ## Testing
 
-Your program will be tested with automated JUnit tests. Make sure your output matches exactly:
+Your program will be tested with automated tests. Make sure your output matches exactly:
 - Print only the number (no extra text) when words are entered
 - Print exactly `no words entered` when only quit is entered
-
-### Running JUnit Tests
-
-To compile and run the JUnit tests:
-
-```bash
-# Compile the program with JUnit
-javac -cp ".:lib/*" Warmup.java
-
-# Run the JUnit tests
-java -jar lib/junit-platform-console-standalone-1.10.1.jar --class-path . --select-class Warmup
-```
-
-The tests are located in the `Warmup.java` file itself and use JUnit 5. All 26 test cases must pass for full credit.
