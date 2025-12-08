@@ -1,21 +1,25 @@
 // Warmup Assignment: Longest Word Finder
 // 
-// Write a few lines of code that prompts the user to enter a series of words,
-// stopping when the user has entered the word "quit". The program should then
-// print the length of the longest word entered or "no words entered" if no
-// words other than "quit" were entered.
+// Implement a method that finds the length of the longest word in an array.
+// If the array is empty or null, return -1.
 //
 // Example:
-// Input: hello world programming quit
+// Input: ["hello", "world", "programming"]
 // Output: 11
 //
 // Example:
-// Input: quit
-// Output: no words entered
+// Input: []
+// Output: -1
 
 public class Warmup {
-    public static void main(String[] args) {
-        // TODO: Implement the program here
-        
+    /**
+     * Finds the length of the longest word in the given array.
+     * 
+     * @param words an array of strings to search through
+     * @return the length of the longest word, or -1 if the array is empty or null
+     */
+    public static int findLongestWordLength(String[] words) {
+        // TODO: Implement this method
+        return -1;
     }
 }

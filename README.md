@@ -2,38 +2,51 @@
 
 ## Assignment
 
-Write a few lines of code that prompts the user to enter a series of words, stopping when the user has entered the word "quit". The program should then print the length of the longest word entered or "no words entered" if no words other than "quit" were entered.
+Implement a method that finds the length of the longest word in an array of strings.
 
 ## Requirements
 
-Complete the `main` method in `Warmup.java`:
+Complete the `findLongestWordLength` method in `Warmup.java`:
 
-- Read words from user input (one per line)
-- Stop reading when "quit" is entered
-- Track the longest word length
-- Print the output:
-  - If words were entered: print just the length number (e.g., `11`)
-  - If no words entered: print `no words entered`
+- Takes an array of strings as input
+- Returns the length of the longest word in the array
+- Returns -1 if the array is empty or null
 
-You can implement this however you like - there are no required methods or specific data structures you must use.
+## Method Signature
 
-## Example Output
-
-```
-hello
-world
-programming
-quit
-11
+```java
+public static int findLongestWordLength(String[] words)
 ```
 
-```
-quit
-no words entered
+## Examples
+
+```java
+// Example 1
+String[] words1 = {"hello", "world", "programming"};
+int result1 = Warmup.findLongestWordLength(words1);
+// Returns: 11 (length of "programming")
+
+// Example 2
+String[] words2 = {"cat", "dog"};
+int result2 = Warmup.findLongestWordLength(words2);
+// Returns: 3 (length of "cat" or "dog")
+
+// Example 3
+String[] words3 = {};
+int result3 = Warmup.findLongestWordLength(words3);
+// Returns: -1 (empty array)
+
+// Example 4
+String[] words4 = null;
+int result4 = Warmup.findLongestWordLength(words4);
+// Returns: -1 (null array)
 ```
 
 ## Testing
 
-Your program will be tested with automated tests. Make sure your output matches exactly:
-- Print only the number (no extra text) when words are entered
-- Print exactly `no words entered` when only quit is entered
+Your implementation will be tested with automated tests that check various scenarios:
+- Empty arrays and null arrays
+- Single word arrays
+- Multiple words of different lengths
+- Words with special characters, numbers, and spaces
+- Edge cases like very long words

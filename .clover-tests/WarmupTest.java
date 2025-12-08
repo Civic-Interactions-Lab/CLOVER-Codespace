@@ -2,195 +2,142 @@
 // This file tests the student's implementation in Warmup.java
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.*;
-
 public class WarmupTest {
-    
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
-    private final InputStream originalIn = System.in;
 
-    @BeforeEach
-    public void setUpStreams() {
-        outContent.reset();
-        System.setOut(new PrintStream(outContent));
-    }
-
-    @AfterEach
-    public void restoreStreams() {
-        System.setOut(originalOut);
-        System.setIn(originalIn);
-    }
-
-    private String getLastLine(String output) {
-        String[] lines = output.trim().split("\n");
-        if (lines.length == 0 || lines[0].isEmpty()) return "";
-        return lines[lines.length - 1].trim();
-    }
-
-    private void runWithInput(String input) {
-        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inContent);
-        Warmup.main(new String[]{});
+    @Test
+    public void testEmptyArray() {
+        assertEquals(-1, Warmup.findLongestWordLength(new String[]{}));
     }
 
     @Test
-    public void testNoWordsEntered() {
-        runWithInput("quit\n");
-        assertEquals("no words entered", getLastLine(outContent.toString()));
+    public void testNullArray() {
+        assertEquals(-1, Warmup.findLongestWordLength(null));
     }
 
     @Test
     public void testSingleWord() {
-        runWithInput("hello\nquit\n");
-        assertEquals("5", getLastLine(outContent.toString()));
+        assertEquals(5, Warmup.findLongestWordLength(new String[]{"hello"}));
     }
 
     @Test
     public void testMultipleWords() {
-        runWithInput("cat\ndog\nelephant\nquit\n");
-        assertEquals("8", getLastLine(outContent.toString()));
+        assertEquals(8, Warmup.findLongestWordLength(new String[]{"cat", "dog", "elephant"}));
     }
 
     @Test
     public void testSameLengthWords() {
-        runWithInput("cat\ndog\nbat\nquit\n");
-        assertEquals("3", getLastLine(outContent.toString()));
+        assertEquals(3, Warmup.findLongestWordLength(new String[]{"cat", "dog", "bat"}));
     }
 
     @Test
     public void testLongestAtBeginning() {
-        runWithInput("elephant\ncat\ndog\nquit\n");
-        assertEquals("8", getLastLine(outContent.toString()));
+        assertEquals(8, Warmup.findLongestWordLength(new String[]{"elephant", "cat", "dog"}));
     }
 
     @Test
     public void testLongestAtEnd() {
-        runWithInput("cat\ndog\nelephant\nquit\n");
-        assertEquals("8", getLastLine(outContent.toString()));
+        assertEquals(8, Warmup.findLongestWordLength(new String[]{"cat", "dog", "elephant"}));
     }
 
     @Test
     public void testSingleCharacter() {
-        runWithInput("a\nb\nc\nquit\n");
-        assertEquals("1", getLastLine(outContent.toString()));
+        assertEquals(1, Warmup.findLongestWordLength(new String[]{"a", "b", "c"}));
     }
 
     @Test
     public void testVeryLongWord() {
-        runWithInput("hi\nsupercalifragilisticexpialidocious\nbye\nquit\n");
-        assertEquals("34", getLastLine(outContent.toString()));
+        assertEquals(34, Warmup.findLongestWordLength(new String[]{"hi", "supercalifragilisticexpialidocious", "bye"}));
     }
 
     @Test
     public void testTwoWords() {
-        runWithInput("cat\nelephant\nquit\n");
-        assertEquals("8", getLastLine(outContent.toString()));
+        assertEquals(8, Warmup.findLongestWordLength(new String[]{"cat", "elephant"}));
     }
 
     @Test
     public void testMixedCase() {
-        runWithInput("Hello\nWORLD\ntest\nquit\n");
-        assertEquals("5", getLastLine(outContent.toString()));
+        assertEquals(5, Warmup.findLongestWordLength(new String[]{"Hello", "WORLD", "test"}));
     }
 
     @Test
-    public void testEmptyWordInMiddle() {
-        runWithInput("cat\n\ndog\nquit\n");
-        assertEquals("3", getLastLine(outContent.toString()));
+    public void testEmptyStringInArray() {
+        assertEquals(3, Warmup.findLongestWordLength(new String[]{"cat", "", "dog"}));
     }
 
     @Test
     public void testWordsWithSpaces() {
-        runWithInput("hello world\ntest\nquit\n");
-        assertEquals("11", getLastLine(outContent.toString()));
+        assertEquals(11, Warmup.findLongestWordLength(new String[]{"hello world", "test"}));
     }
 
     @Test
     public void testNumericalStrings() {
-        runWithInput("123\n45678\n9\nquit\n");
-        assertEquals("5", getLastLine(outContent.toString()));
+        assertEquals(5, Warmup.findLongestWordLength(new String[]{"123", "45678", "9"}));
     }
 
     @Test
     public void testSpecialCharacters() {
-        runWithInput("hello!\ntest@\nworld#$\nquit\n");
-        assertEquals("7", getLastLine(outContent.toString()));
+        assertEquals(7, Warmup.findLongestWordLength(new String[]{"hello!", "test@", "world#$"}));
     }
 
     @Test
     public void testAllSameLength() {
-        runWithInput("one\ntwo\nsix\nquit\n");
-        assertEquals("3", getLastLine(outContent.toString()));
+        assertEquals(3, Warmup.findLongestWordLength(new String[]{"one", "two", "six"}));
     }
 
     @Test
     public void testShortAndLongMix() {
-        runWithInput("a\nsuperlongword\nb\nquit\n");
-        assertEquals("13", getLastLine(outContent.toString()));
+        assertEquals(13, Warmup.findLongestWordLength(new String[]{"a", "superlongword", "b"}));
     }
 
     @Test
     public void testMultipleLongest() {
-        runWithInput("test\nword\nwork\nquit\n");
-        assertEquals("4", getLastLine(outContent.toString()));
+        assertEquals(4, Warmup.findLongestWordLength(new String[]{"test", "word", "work"}));
     }
 
     @Test
     public void testWordsWithTrailingSpaces() {
-        runWithInput("hello   \nworld  \nquit\n");
-        assertEquals("8", getLastLine(outContent.toString()));
+        assertEquals(8, Warmup.findLongestWordLength(new String[]{"hello   ", "world  "}));
     }
 
     @Test
     public void testHyphenatedWords() {
-        runWithInput("test-word\nhello\nquit\n");
-        assertEquals("9", getLastLine(outContent.toString()));
+        assertEquals(9, Warmup.findLongestWordLength(new String[]{"test-word", "hello"}));
     }
 
     @Test
     public void testSingleVeryLongWord() {
-        runWithInput("supercalifragilisticexpialidocious\nquit\n");
-        assertEquals("34", getLastLine(outContent.toString()));
+        assertEquals(34, Warmup.findLongestWordLength(new String[]{"supercalifragilisticexpialidocious"}));
     }
 
     @Test
     public void testWordsWithUnderscores() {
-        runWithInput("hello_world\ntest\nquit\n");
-        assertEquals("11", getLastLine(outContent.toString()));
+        assertEquals(11, Warmup.findLongestWordLength(new String[]{"hello_world", "test"}));
     }
 
     @Test
     public void testAlternatingLengths() {
-        runWithInput("a\nbb\nccc\ndddd\neeeee\nquit\n");
-        assertEquals("5", getLastLine(outContent.toString()));
+        assertEquals(5, Warmup.findLongestWordLength(new String[]{"a", "bb", "ccc", "dddd", "eeeee"}));
     }
 
     @Test
     public void testPalindromeWords() {
-        runWithInput("racecar\nlevel\nradar\nquit\n");
-        assertEquals("7", getLastLine(outContent.toString()));
+        assertEquals(7, Warmup.findLongestWordLength(new String[]{"racecar", "level", "radar"}));
     }
 
     @Test
     public void testThreeWords() {
-        runWithInput("one\ntwo\nthree\nquit\n");
-        assertEquals("5", getLastLine(outContent.toString()));
+        assertEquals(5, Warmup.findLongestWordLength(new String[]{"one", "two", "three"}));
     }
 
     @Test
     public void testWordsWithNumbers() {
-        runWithInput("test1\ntest22\ntest333\nquit\n");
-        assertEquals("7", getLastLine(outContent.toString()));
+        assertEquals(7, Warmup.findLongestWordLength(new String[]{"test1", "test22", "test333"}));
     }
 
     @Test
     public void testUnicodeCharacters() {
-        runWithInput("café\nhello\nquit\n");
-        assertEquals("5", getLastLine(outContent.toString()));
+        assertEquals(5, Warmup.findLongestWordLength(new String[]{"café", "hello"}));
     }
 }
