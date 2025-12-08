@@ -25,16 +25,17 @@ fi
 
 # Copy source files to temp directory
 cp "$WARMUP_FILE" "$TEMP_DIR/"
+cp "$SCRIPT_DIR/WarmupTest.java" "$TEMP_DIR/"
 
 # Compile
 echo "Compiling..."
 cd "$TEMP_DIR"
-COMPILE_OUTPUT=$(javac -cp "$JUNIT_JAR" Warmup.java 2>&1)
+COMPILE_OUTPUT=$(javac -cp "$JUNIT_JAR" Warmup.java WarmupTest.java 2>&1)
 COMPILE_STATUS=$?
 
 # Show compilation errors if any
 if [ $COMPILE_STATUS -ne 0 ]; then
-    echo "$COMPILE_OUTPUT"
+    echo "$COMPILE_OUTPUT" | grep -v "WarmupTest.java" | grep -v "^$" || true
     echo "Compilation failed!"
     exit 1
 fi
@@ -45,7 +46,7 @@ echo "=================================================="
 echo ""
 
 # Run tests and capture output
-TEST_OUTPUT=$(java -jar "$JUNIT_JAR" --class-path "$TEMP_DIR" --select-class Warmup --details=tree 2>&1)
+TEST_OUTPUT=$(java -jar "$JUNIT_JAR" --class-path "$TEMP_DIR" --select-class WarmupTest --details=tree 2>&1)
 
 # Parse and display results in LeetCode style
 TEST_NUM=1
