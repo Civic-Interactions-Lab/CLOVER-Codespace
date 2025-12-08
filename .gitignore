@@ -6,6 +6,8 @@
 
 # Package files
 *.jar
+# But allow lib directory JARs (JUnit dependencies)
+!lib/*.jar
 
 # IDE files
 .idea/
