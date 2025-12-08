@@ -56,6 +56,13 @@ Your program must print only the number representing the length.
 
 **Note:** The automated tests compare your output exactly. Extra text will cause the test to fail.
 
+## Testing and Running Your Code
+This assignment includes automated tests that will help you verify your implementation. **Your grade will be based on passing these tests**.
+To run the tests and execute your program:
+1. Click the **Run** button in your development environment
+2. The automated tests will run first, showing you which test cases pass or fail
+3. After the tests are complete, your program will run interactively so you can test it manually
+
 ## Stylistic Guidelines
 
 Your program will be tested with automated input/output tests. Make sure your output matches exactly:
