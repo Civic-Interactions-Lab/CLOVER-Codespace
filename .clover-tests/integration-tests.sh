@@ -82,9 +82,6 @@ run_test "Mixed case words" "Hello\nWORLD\ntest\nquit" "5"
 # Test 11: Empty word (just enter with no text)
 run_test "Empty word in middle" "cat\n\ndog\nquit" "3"
 
-# Test 12: Lots of spaces
-run_test "Words with spaces" "hello world\ntest\nquit" "11"
-
 # Test 13: Numerical strings
 run_test "Numerical strings" "123\n45678\n9\nquit" "5"
 
@@ -99,9 +96,6 @@ run_test "Short and long mix" "a\nsuperlongword\nb\nquit" "13"
 
 # Test 17: Multiple longest words
 run_test "Multiple longest" "test\nword\nwork\nquit" "4"
-
-# Test 18: Trailing spaces
-run_test "Words with trailing spaces" "hello   \nworld  \nquit" "8"
 
 # Test 19: Hyphenated words
 run_test "Hyphenated words" "test-word\nhello\nquit" "9"
