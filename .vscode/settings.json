@@ -73,7 +73,7 @@
     "**/.*": true
   },
   "clover.debug.apiUrl": "Main API",
-  "clover.classId": "0058c4c5-1702-48c3-88f5-1ef7bb311c4a",
+  "clover.classId": "0021cc91-b391-4232-ac0c-5f7c20f50979",
   "clover.classCode": "R1068",
   "clover.classTitle": "Rainfall Problem 1068",
   "clover.bugPercentage": 60,
