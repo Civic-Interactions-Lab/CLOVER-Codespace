@@ -140,4 +140,34 @@ public class WarmupTest {
     public void testUnicodeCharacters() {
         assertEquals(5, Warmup.findLongestWordLength(new String[]{"café", "hello"}));
     }
+
+    @Test
+    public void testQuitAtBeginning() {
+        assertEquals(-1, Warmup.findLongestWordLength(new String[]{"quit", "hello", "world"}));
+    }
+
+    @Test
+    public void testQuitInMiddle() {
+        assertEquals(5, Warmup.findLongestWordLength(new String[]{"hello", "quit", "world", "programming"}));
+    }
+
+    @Test
+    public void testQuitAtEnd() {
+        assertEquals(11, Warmup.findLongestWordLength(new String[]{"hello", "world", "programming", "quit"}));
+    }
+
+    @Test
+    public void testMultipleQuit() {
+        assertEquals(5, Warmup.findLongestWordLength(new String[]{"hello", "quit", "world", "quit", "test"}));
+    }
+
+    @Test
+    public void testQuitOnly() {
+        assertEquals(-1, Warmup.findLongestWordLength(new String[]{"quit"}));
+    }
+
+    @Test
+    public void testQuitCaseSensitive() {
+        assertEquals(11, Warmup.findLongestWordLength(new String[]{"hello", "QUIT", "programming"}));
+    }
 }

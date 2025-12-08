@@ -11,6 +11,7 @@ Complete the `findLongestWordLength` method in `Warmup.java`:
 - Takes an array of strings as input
 - Returns the length of the longest word in the array
 - Returns -1 if the array is empty or null
+- **Special rule**: If the word "quit" appears in the array, stop processing and only consider words before "quit"
 
 ## Method Signature
 
@@ -40,6 +41,16 @@ int result3 = Warmup.findLongestWordLength(words3);
 String[] words4 = null;
 int result4 = Warmup.findLongestWordLength(words4);
 // Returns: -1 (null array)
+
+// Example 5 - with "quit"
+String[] words5 = {"hello", "quit", "world", "programming"};
+int result5 = Warmup.findLongestWordLength(words5);
+// Returns: 5 (only "hello" is counted, "world" and "programming" are after "quit")
+
+// Example 6 - "quit" at beginning
+String[] words6 = {"quit", "hello", "world"};
+int result6 = Warmup.findLongestWordLength(words6);
+// Returns: -1 (no words before "quit")
 ```
 
 ## Testing
@@ -50,3 +61,4 @@ Your implementation will be tested with automated tests that check various scena
 - Multiple words of different lengths
 - Words with special characters, numbers, and spaces
 - Edge cases like very long words
+- Arrays containing "quit" at different positions
