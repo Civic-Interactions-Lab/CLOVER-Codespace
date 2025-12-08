@@ -39,7 +39,12 @@ public class Warmup {
         String[] test3 = {};
         System.out.println("Test 3: " + findLongestWordLength(test3)); // Should return -1
         
-        String[] test4 = null;
-        System.out.println("Test 4: " + findLongestWordLength(test4)); // Should return -1
+        // Note: This test may throw NullPointerException if your implementation doesn't handle null
+        try {
+            String[] test4 = null;
+            System.out.println("Test 4: " + findLongestWordLength(test4)); // Should return -1
+        } catch (NullPointerException e) {
+            System.out.println("Test 4: NullPointerException - make sure to handle null input!");
+        }
     }
 }

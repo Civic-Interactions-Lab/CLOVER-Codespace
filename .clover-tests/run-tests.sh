@@ -19,12 +19,13 @@ echo ""
 cd "$PROJECT_DIR"
 if [ -f "Warmup.java" ]; then
     # Compile if needed
-    javac -cp ".:lib/*" Warmup.java 2>&1
+    COMPILE_OUTPUT=$(javac -cp ".:lib/*" Warmup.java 2>&1)
     if [ $? -eq 0 ]; then
         # Run the main method
         java -cp ".:lib/*" Warmup
     else
-        echo "Compilation failed for manual test run"
+        echo "Compilation failed for manual test run:"
+        echo "$COMPILE_OUTPUT"
     fi
 else
     echo "Warmup.java not found"
