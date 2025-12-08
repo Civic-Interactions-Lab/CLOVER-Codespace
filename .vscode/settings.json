@@ -72,7 +72,7 @@
   "files.watcherExclude": {
     "**/.*": true
   },
-  "clover.debug.apiUrl": "Main API",
+  "clover.debug.apiUrl": "Dev API",
   "clover.classId": "d4a16729-be77-445c-b630-a23087e7acc6",
   "clover.classCode": "R1068",
   "clover.classTitle": "Rainfall Problem 1068",
